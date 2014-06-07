@@ -1,4 +1,4 @@
-baseurl: /myquant
+baseurl: /site
 markdown: redcarpet
 highlighter: pygments
 relative_permalinks: false
