@@ -1,0 +1,40 @@
+- title: 整体介绍
+  docs:
+  - home
+  - quickstart
+
+- title: 策略监控
+  docs:
+  - frontmatter
+  - posts
+  - drafts
+
+- title: 策略开发：C/C++
+  docs:
+  - templates
+  - permalinks
+
+- title: 策略开发：C#
+  docs:
+  - github-pages
+  - deployment-methods
+
+- title: 策略开发：Python
+  docs:
+  - troubleshooting
+  - sites
+
+- title: 策略开发：Matlab
+  docs:
+  - troubleshooting
+  - sites
+
+- title: 常见问题解答(FAQ)
+  docs:
+  - troubleshooting
+  - sites
+
+- title: Meta
+  docs:
+  - contributing
+  - history

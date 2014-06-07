@@ -1,0 +1,12 @@
+.header {
+    font-family: 'Microsoft Yahei', 'Open Sans', sans-serif;
+}
+
+.magazine-page .active {
+    text-decoration: none;
+    background: #3498db;
+}
+
+.magazine-page .active a {
+    color: #fff !important;
+}

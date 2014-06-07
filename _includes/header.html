@@ -1,0 +1,29 @@
+<!--=== Header === -->
+<div class="header">
+  <nav class="navbar navbar-default navbar-static" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img id="logo-header" src="/images/logo1-default.png" alt="Logo">
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-responsive-collapse" id="main-nav">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="{% if page.overview %}active{% endif %}"><a href="/">首页</a></li>
+          <li class="{% if page.author %}active{% endif %}"><a href="/news">新闻动态</a></li>
+          <li class="{% if page.url contains '/docs/' %}active{% endif %}"><a href="/docs/home">产品文档</a></li>
+          <li class="{% if page.download %}active{% endif %}"><a href="/downloads">产品下载</a></li>
+          <li class="{% if page.about %}active{% endif %}"><a href="/about">公司介绍</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!--=== End Header === -->

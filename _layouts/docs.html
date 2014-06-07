@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-50">
+  <div class="container">
+    <h1 class="pull-left">产品文档</h1>
+  </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+<div class="container">	
+    <div class="row blog-page blog-item">
+      <!-- Left Sidebar -->
+      <div class="col-md-10 md-margin-bottom-60">
+        <!--Blog Post-->        
+        <div class="blog margin-bottom-40">
+            <article>
+              <h2>{{ page.title }}</h2>
+              <hr>
+              {{ content }}
+            </article>
+            {% include duoshuo_comment.html %}
+        </div>
+        <!--End Blog Post-->        
+      </div>
+      <!-- End Left Sidebar -->
+
+      <!-- Right Sidebar -->
+      <div class="col-md-2 magazine-page">
+        <!-- Posts Content -->
+        {% include docs_contents.html %}
+        <!-- End Posts Content -->
+      </div>
+      <!-- End Right Sidebar -->
+    </div><!--/row-->   
+
+</div><!--/container-->		
+<!-- End Content Part -->
