@@ -1,4 +1,4 @@
-baseurl: /site
+baseurl: ""
 markdown: redcarpet
 highlighter: pygments
 relative_permalinks: false
