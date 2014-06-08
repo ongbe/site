@@ -10,17 +10,17 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#">
-          <img id="logo-header" src="/images/logo1-default.png" alt="Logo">
+          <img id="logo-header" src="{{ site.baseurl }}/images/logo1-default.png" alt="Logo">
         </a>
       </div>
 
       <div class="collapse navbar-collapse navbar-responsive-collapse" id="main-nav">
         <ul class="nav navbar-nav navbar-right">
-          <li class="{% if page.overview %}active{% endif %}"><a href="/">首页</a></li>
-          <li class="{% if page.author %}active{% endif %}"><a href="/news">新闻动态</a></li>
-          <li class="{% if page.url contains '/docs/' %}active{% endif %}"><a href="/docs/home">产品文档</a></li>
-          <li class="{% if page.download %}active{% endif %}"><a href="/downloads">产品下载</a></li>
-          <li class="{% if page.about %}active{% endif %}"><a href="/about">公司介绍</a></li>
+          <li class="{% if page.overview %}active{% endif %}"><a href="{{ site.baseurl }}/">首页</a></li>
+          <li class="{% if page.author %}active{% endif %}"><a href="{{ site.baseurl }}/news">新闻动态</a></li>
+          <li class="{% if page.url contains '/docs/' %}active{% endif %}"><a href="{{ site.baseurl }}/docs/home">产品文档</a></li>
+          <li class="{% if page.download %}active{% endif %}"><a href="{{ site.baseurl }}/downloads">产品下载</a></li>
+          <li class="{% if page.about %}active{% endif %}"><a href="{{ site.baseurl }}/about">公司介绍</a></li>
         </ul>
       </div>
     </div>
