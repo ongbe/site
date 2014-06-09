@@ -56,14 +56,14 @@ PyCharm产品介绍：[http://www.jetbrains.com/pycharm/](http://www.jetbrains.c
 配置完成后填入项目路径新建一个项目，然后新建一个.py文件，写一句helloworld：
 输入：print 'hello world'
 
-![Hello world]({{site.baseurl}}/images/docs/python/tut/helloworld.png) { width: 400px; }
+![Hello world]({{site.baseurl}}/images/docs/python/tut/helloworld.png) 
 
 
 * **配置程序的运行环境和参数**
 
 此时还无法运行，因为没有配置项目的入口脚本，通过下图的步骤指定一个：
 
-![config run]({{site.baseurl}}/images/docs/python/tut/config_run.png) { width: 200px; }
+![config run]({{site.baseurl}}/images/docs/python/tut/config_run.png) 
 
 
 ![config run1]({{site.baseurl}}/images/docs/python/tut/config_run1.png)
