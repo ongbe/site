@@ -27,7 +27,7 @@ PyCharm社区版免费下载地址：http://www.jetbrains.com/pycharm/, 当前�
 
 * **下载Python**
 
-安装完PyCharm后，还需要安装Python解释器，下载地址：https://www.python.org/downloads/
+安装完PyCharm后，还需要安装Python解释器，下载地址(https://www.python.org/downloads/, "Python")
 
 推荐安装最稳定且比较新的版本V2.7.7，如果对新版本Python有兴趣，也可以安装3.X学习，两者可以并存。
 
