@@ -56,9 +56,8 @@ PyCharm产品介绍：[http://www.jetbrains.com/pycharm/](http://www.jetbrains.c
 配置完成后填入项目路径新建一个项目，然后新建一个.py文件，写一句helloworld：
 输入：print 'hello world'
 
-![image]({{site.baseurl}}/images/docs/python/tut/helloworld.png =640x480)
+![Hello world]({{site.baseurl}}/images/docs/python/tut/helloworld.png =640x480)
 
-<img src="{{site.baseurl}}/images/docs/python/tut/helloworld.png" alt="Drawing" style="width: 400px;"/>
 
 * **配置程序的运行环境和参数**
 
