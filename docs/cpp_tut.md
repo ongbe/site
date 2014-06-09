@@ -4,6 +4,13 @@ title: C/C++策略开发指引
 permalink: /docs/cpp_tut/
 ---
 
+GMSDK目录结构
+=======
+
+其中头文件在inc目录下，dll和lib文件在lib目录下，如下图所示：
+
+![gmsdk]({{site.baseurl}}/images/docs/cpp/tut/gmsdk_tree.png)
+
 
 Visual C++中策略开发环境设置
 =======
