@@ -23,11 +23,11 @@ Python 开发环境的设置及示例
 ### 准备相应软件
 * **下载PyCharm**
  
-PyCharm产品介绍：[PyCharm http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/), [下载页面](http://www.jetbrains.com/pycharm/download/), 当前最新版本为V3.4，下载并安装 [Community Edition for FREE](http://www.jetbrains.com/pycharm/download/download_thanks.jsp)
+PyCharm产品介绍：[http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/), [下载页面](http://www.jetbrains.com/pycharm/download/), 当前最新版本为V3.4，下载并安装[Community Edition for FREE](http://www.jetbrains.com/pycharm/download/download_thanks.jsp)
 
 * **下载Python**
 
-安装完PyCharm后，还需要安装Python解释器, [Python下载 https://www.python.org/downloads/](https://www.python.org/downloads/ "Python")
+安装完PyCharm后，还需要安装Python解释器, [https://www.python.org/downloads/](https://www.python.org/downloads/ "Python")
 
 推荐安装最稳定且比较新的版本V2.7.7，如果对新版本Python有兴趣，也可以安装3.X学习，两者可以并存。
 
