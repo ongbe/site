@@ -5,29 +5,29 @@
 
 - title: 策略监控
   docs:
-  - frontmatter
-  - posts
+  - gui_prof
+  - gui_enter
   - drafts
 
 - title: 策略开发：C/C++
   docs:
-  - templates
-  - permalinks
+  - cpp_tut
+  - cpp_examples
 
 - title: 策略开发：C#
   docs:
-  - github-pages
-  - deployment-methods
+  - csharp_tut
+  - csharp_examples
 
 - title: 策略开发：Python
   docs:
-  - troubleshooting
-  - sites
+  - python_tut
+  - python_examples
 
 - title: 策略开发：Matlab
   docs:
-  - troubleshooting
-  - sites
+  - matlab_tut
+  - matlab_examples
 
 - title: 常见问题解答(FAQ)
   docs:
