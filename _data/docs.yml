@@ -21,8 +21,8 @@
 
 - title: 策略开发：Python
   docs:
-  - troubleshooting
-  - sites
+  - tutorial
+  - examples
 
 - title: 策略开发：Matlab
   docs:
