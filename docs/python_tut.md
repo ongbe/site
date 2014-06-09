@@ -6,9 +6,6 @@ next_section: manual-deployment
 permalink: /docs/python_tut/
 ---
 
-Python 开发环境的设置及示例
--------
-
 红树推荐使用JetBrains的Pycharm社区免费版作为Python策略的开发环境，PyCharm是JetBrains系列产品的一员，也是现在最好用的IDE之一。PyCharm维持了JetBrains一贯高度智能的作风，简要枚举如下：
 
 ![image]({{site.baseurl}}/images/docs/python/tut/pycharm.jpg)
