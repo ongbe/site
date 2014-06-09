@@ -69,7 +69,7 @@ PyCharm产品介绍：[http://www.jetbrains.com/pycharm/](http://www.jetbrains.c
 ![config run1]({{site.baseurl}}/images/docs/python/tut/config_run1.png)
 
 
-在scrip框里填入你的入口脚本, script配置框中选择或填入相应的python文件路径。
+在配置对话框Name中填入你的程序名称,在 script配置框中选择或填入相应的python文件路径。
 
 ![image]({{site.baseurl}}/images/docs/python/tut/config_runn.png)
 
