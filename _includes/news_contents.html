@@ -15,7 +15,7 @@
   <ul class="list-unstyled">
     {% for post in site.posts limit:5 %}
     <li class="{% if page.title == post.title %}active{% endif %}">
-        <a href="{{ site.baseurl }}/{{ post.url }}"><i class="fa fa-pencil"></i> 版本 {{ post.version }}</a>
+        <a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-pencil"></i> 版本 {{ post.version }}</a>
     </li>
     {% endfor %}
     <li>
