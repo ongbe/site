@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Tutorial of Python Strategy Developing  
+title: Python策略开发指引  
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/python_tut/
