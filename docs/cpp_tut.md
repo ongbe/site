@@ -5,7 +5,7 @@ permalink: /docs/cpp_tut/
 ---
 
 GMSDK目录结构
-=======
+----------
 
 其中头文件在inc目录下，dll和lib文件在lib目录下，如下图所示：
 
@@ -13,7 +13,7 @@ GMSDK目录结构
 
 
 Visual C++中策略开发环境设置
-=======
+------
 
 在Windows下C++策略的开发环境，红树推荐使用微软的Visual Studio。
 红树策略开发SDK是作为第三方库来使用的，为了不影响其他工程，建议按项目来设置，把SDK的include头文件和DLL库文件设置在项目中。
