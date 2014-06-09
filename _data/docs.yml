@@ -21,8 +21,8 @@
 
 - title: 策略开发：Python
   docs:
-  - tutorial
-  - examples
+  - python_tut
+  - python_examples
 
 - title: 策略开发：Matlab
   docs:
