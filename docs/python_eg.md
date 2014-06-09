@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: Python策略开发指引  
+title: Python策略示例  
 prev_section: github-pages
 next_section: manual-deployment
-permalink: /docs/python_tut/
+permalink: /docs/python_example/
 ---
 
 ## 一个简单的策略示例
