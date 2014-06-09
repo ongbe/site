@@ -7,7 +7,7 @@ permalink: /docs/python_tut/
 ---
 
 Python 开发环境的设置及示例
-=============
+-------
 
 红树推荐使用JetBrains的Pycharm社区免费版作为Python策略的开发环境，PyCharm是JetBrains系列产品的一员，也是现在最好用的IDE之一。PyCharm维持了JetBrains一贯高度智能的作风，简要枚举如下：
 
@@ -18,9 +18,9 @@ Python 开发环境的设置及示例
 * 基于上下文的智能代码提示和纠错
 * 方便的程序调试功能
 
-## 部署基本的Python编程调试环境
+### 部署基本的Python编程调试环境
 
-### 准备相应软件
+#### 准备相应软件
 * **下载PyCharm**
  
 PyCharm产品介绍：[http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/), [下载页面](http://www.jetbrains.com/pycharm/download/), 当前最新版本为V3.4，下载并安装[Community Edition for FREE](http://www.jetbrains.com/pycharm/download/download_thanks.jsp)
@@ -31,7 +31,7 @@ PyCharm产品介绍：[http://www.jetbrains.com/pycharm/](http://www.jetbrains.c
 
 推荐安装最稳定且比较新的版本V2.7.7，如果对新版本Python有兴趣，也可以安装3.X学习，两者可以并存。
 
-### 创建一个简单项目
+#### 创建一个简单项目
 
 通过创建一个简单项目来测试环境是否安装好。
 
@@ -82,11 +82,11 @@ Run Hello World输出如图：
 
 以上测试检查无误后，说明Python基本环境安装完成；
 
-## 安装掘金策略开发工具包
+### 安装掘金策略开发工具包
 
 安装GMSDK及其依赖库, 选择前面安装的Python v2.7.6解释器路径。
 
-### 安装依赖库
+#### 安装依赖库
 
 安装GMSDK所需要用到的第三方基础库
 
@@ -98,14 +98,14 @@ Run Hello World输出如图：
 
 ![image]({{site.baseurl}}/images/docs/python/tut/gmsdk_install_cparser.png) 
 
-### 安装GMSDK
+#### 安装GMSDK
 
 安装掘金策略开发SDK库，注意选择Python路径，当前GMSDK建议只在Python V2.7.x 上使用：
 
 ![image]({{site.baseurl}}/images/docs/python/tut/gmsdk_install_gmsdk.png) 
 
 
-### 运行例子策略
+#### 运行例子策略
 
 下面我们通过一个简单的例子策略来检查一下策略开发包是否安装正常。
 
