@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: Python策略开发指引  
+title: Python策略示例  
 prev_section: github-pages
 next_section: manual-deployment
-permalink: /docs/python_tut/
+permalink: /docs/python_examples/
 ---
 
 ## 一个简单的策略示例
@@ -113,14 +113,16 @@ if __name__ == '__main__':
 ```
 
 推荐使用配置文件方式, 例如，以下是行情回放情况下的配置文件test_strategy.ini的内容示例, 相对实时行情而言，更换了md_uri,增加了回放需要的几个参数，回放开始时间，结束时间，回放速度:
-```
+
+```ini
         md_uri='playback://211.154.152.181:5109'
         tr_uri='tcp://211.154.152.181:5050'
         query_uri='tcp://211.154.152.181:5104'
         username='your username'
         password='your password'
         strategy_id='your strategy_id'
-        subscribe_symbols='CFFEX.IF1406.tick,CFFEX.IF1406.bar.60'         playback_start_time='2014-05-08 09:00:00'
+        subscribe_symbols='CFFEX.IF1406.tick,CFFEX.IF1406.bar.60'         
+        playback_start_time='2014-05-08 09:00:00'
         playback_end_time='2014-05-09 16:00:00'
         playback_speed=10
 ```
