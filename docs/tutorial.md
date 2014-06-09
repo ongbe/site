@@ -58,6 +58,7 @@ PyCharm产品介绍：[http://www.jetbrains.com/pycharm/](http://www.jetbrains.c
 
 ![image]({{site.baseurl}}/images/docs/python/tut/helloworld.png =640x480)
 
+<img src="{{site.baseurl}}/images/docs/python/tut/helloworld.png" alt="Drawing" style="width: 400px;"/>
 
 * **配置程序的运行环境和参数**
 
