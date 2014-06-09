@@ -6,6 +6,8 @@ next_section: pages
 permalink: /docs/drafts/
 ---
 
+Test Cde 
+
 Drafts are posts without a date. They're posts you're still working on and don't want to
 publish yet. To get up and running with drafts, create a `_drafts` folder in your site's
 root (as described in the [site structure](/docs/structure/) section) and create your
