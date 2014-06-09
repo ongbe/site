@@ -5,6 +5,9 @@ next_section: quickstart
 permalink: /docs/home/
 ---
 
+Test for Index modifying
+=======================
+
 This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such
 as getting your site up and running, creating and managing your content,
 customizing the way your site works and looks, deploying to various
