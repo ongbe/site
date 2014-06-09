@@ -11,8 +11,7 @@ Python 开发环境的设置及示例
 
 红树推荐使用JetBrains的Pycharm社区免费版作为Python策略的开发环境，PyCharm是JetBrains系列产品的一员，也是现在最好用的IDE之一。PyCharm维持了JetBrains一贯高度智能的作风，简要枚举如下：
 
-![image]({{site.baseurl}}/images/miner.png)
-![image]({{site.baseurl}}/images/tutorial/pycharm.jpg)
+![image]({{site.baseurl}}/images/docs/python/tut/pycharm.jpg)
 
 * 独特的本地VCS系统
 * 强大的重构功能
@@ -43,11 +42,11 @@ PyCharm社区版免费下载地址：http://www.jetbrains.com/pycharm/, 当前�
 操作路径一：File>New Project...>Inerterter
 操作路径二：File> Setting...> Project Interpreter
 
-![image](tutorial/newproject.png)
+![image]({{site.baseurl}}/images/docs/python/tut/newproject.png)
 
 * **增加一个解释器:**
 
-![image](tutorial/pythoninterpreter.png)
+![image]({{site.baseurl}}/images/docs/python/tut/pythoninterpreter.png)
 
 
 ***增加之后PyCharm会智能地提示你安装setuptool和pip，照着提示一路点击就行了。（Python2.7的setuptool安装会报错UnicodeDecodeError: 'ascii' codec can't decode byte 0xc4 in position 33: ordinal not in range(128)，需要手工修改脚本再安装）。***
@@ -57,29 +56,29 @@ PyCharm社区版免费下载地址：http://www.jetbrains.com/pycharm/, 当前�
 配置完成后填入项目路径新建一个项目，然后新建一个.py文件，写一句helloworld：
 输入：print 'hello world'
 
-![image](tutorial/helloworld.png)
+![image]({{site.baseurl}}/images/docs/python/tut/helloworld.png)
 
 
 * **配置程序的运行环境和参数**
 
 此时还无法运行，因为没有配置项目的入口脚本，通过下图的步骤指定一个：
 
-![image](tutorial/config_run.png)
+![image]({{site.baseurl}}/images/docs/python/tut/config_run.png)
 
 
-![image](tutorial/config_run1.png)
+![image]({{site.baseurl}}/images/docs/python/tut/config_run1.png)
 
 
 在scrip框里填入你的入口脚本, script配置框中选择或填入相应的python文件路径。
 
-![image](tutorial/config_runn.png)
+![image]({{site.baseurl}}/images/docs/python/tut/config_runn.png)
 
 * **Run Hello World程序**
 
 Run Hello World输出如图：
 
-![image](tutorial/config_run3.png)
-![image](tutorial/hello_output.png)
+![image]({{site.baseurl}}/images/docs/python/tut/config_run3.png)
+![image]({{site.baseurl}}/images/docs/python/tut/hello_output.png)
 
 以上测试检查无误后，说明Python基本环境安装完成；
 
@@ -93,17 +92,17 @@ Run Hello World输出如图：
 
 * 安装CFFI:
 
-![image](tutorial/gmsdk_install_cffi.png) 
+![image]({{site.baseurl}}/images/docs/python/tut/gmsdk_install_cffi.png) 
 
 * 安装PyCParser:
 
-![image](tutorial/gmsdk_install_cparser.png) 
+![image]({{site.baseurl}}/images/docs/python/tut/gmsdk_install_cparser.png) 
 
 ### 安装GMSDK
 
 安装掘金策略开发SDK库，注意选择Python路径，当前GMSDK建议只在Python V2.7.x 上使用：
 
-![image](tutorial/gmsdk_install_gmsdk.png) 
+![image]({{site.baseurl}}/images/docs/python/tut/gmsdk_install_gmsdk.png) 
 
 
 ### 运行例子策略
@@ -112,22 +111,22 @@ Run Hello World输出如图：
 
 同样，新建一个.py文件，拷贝我们的Demo策略strategy_simple.py的内容：
 
-![image](tutorial/strategy_demo.png)
+![image]({{site.baseurl}}/images/docs/python/tut/strategy_demo.png)
 
 **配置运行/调试脚本：**
 操作路径：Run>Edit Configurations...
 
-![image](tutorial/strategy_run.png)
+![image]({{site.baseurl}}/images/docs/python/tut/strategy_run.png)
 
 **配置后：**
 
-![image](tutorial/strategy_run1.png)
+![image]({{site.baseurl}}/images/docs/python/tut/strategy_run1.png)
 
 **运行状态：**
 
 点击运行，在有行情时段，会看到策略正常运行，打印出收到的行情数据。
 
-![image](tutorial/result.png)
+![image]({{site.baseurl}}/images/docs/python/tut/result.png)
 
 
 接下来就可以参考示例，开始编写你自己的策略了！
