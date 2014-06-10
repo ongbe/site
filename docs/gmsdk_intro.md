@@ -20,13 +20,16 @@ permalink: /docs/gmsdk_intro/
 
 方便大家随时随地免费接入，全天候进行策略开发、调试、回验和paper trading，不再受到交易时间的限制，以最高的效率保证策略快速上线实盘.
 
+对于机构版客户，还可以在内部环境中部署历史数据的回放服务，方便反复回验策略模型。
+
 
 ## 掘金SDK支持的开发语言和操作系统
 
 掘金SDK目前支持C, C++, C#, Python, Matlab（*通过C#支持*）5种语言，大家可以选择自己最熟悉、最趁手的语言来开发策略。5种开发语言支持的功能均完整一致，API风格统一，并有完善的开发文档和示例程序，方便快速上手。
 
 SDK同时支持Windows和Linux操作系统，各操作系统支持的语言如下：
-- Windows： C, C++, C#, Python, Matlab
+
+- Windows： C, C++, C#, Python
 - Linux： C, C++, Python
 
 
@@ -34,10 +37,10 @@ SDK同时支持Windows和Linux操作系统，各操作系统支持的语言如�
 
 掘金SDK不限制您使用任何特定的开发工具，您完全可以选择任意自己熟悉的开发工具链。常见的开发工具链比如：
 
-C，C++语言： vc++, gcc, eclipse cdt
-C#语言: visual studio, mono
-Python: pycharm, pydev, 或任何文本编辑器即可
-Matlab: matlab
+- C，C++语言： vc++, gcc, eclipse cdt
+- C#语言: visual studio, mono
+- Python: pycharm, pydev, 或任何文本编辑器即可
+- Matlab: matlab
 
 
 ## 掘金SDK涵盖的功能范围
