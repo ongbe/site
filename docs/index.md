@@ -1,58 +1,23 @@
 ---
 layout: docs
-title: Welcome
+title: 掘金简介
 next_section: quickstart
 permalink: /docs/home/
 ---
 
-This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such
-as getting your site up and running, creating and managing your content,
-customizing the way your site works and looks, deploying to various
-environments, and give you some advice on participating in the future
-development of Jekyll itself.
+掘金量化交易平台（以下简称掘金）是深圳红树科技为广大宽客、量化策略师量身定制的一套涵盖量化交易的全业务解决方案，服务于量化策略的开发、模拟交易、策略运行、盘后分析等核心业务，提供了数据服务、交易服务、策略运行监控管理、风控规则设定及实时分析等关键功能，以及相应的策略开发接口API，涵盖了策略开发、运行管理、分析改进等量化交易所必备的核心需求。
 
-## So what is Jekyll, exactly?
+掘金SDK以易用、高性能、开放为设计目标，并专门针对量化交易优化。提供强大的跨语言、跨平台支持，覆盖所有主流开发语言和操作系统，可充分利用各类现有语言平台上的金融、统计、机器学习等第三方工具包。SDK的接口风格和消息设计上，遵循国际标准，兼容FIX协议定义。
 
-Jekyll is a simple, blog-aware, static site generator. It takes a template
-directory containing raw text files in various formats, runs it through
-[Markdown](http://daringfireball.net/projects/markdown/) (or
-[Textile](http://textile.sitemonks.com/)) and
-[Liquid](http://wiki.shopify.com/Liquid)
-converters, and spits out a complete, ready-to-publish static website suitable
-for serving with your favorite web server. Jekyll also happens to be the engine
-behind [GitHub Pages](http://pages.github.com), which means you can use Jekyll
-to host your project’s page, blog, or website from GitHub’s servers **for
-free**.
+目前SDK主要支持期货，后续将陆续支持期权和股票。
 
-## Helpful Hints
+另外，我们在互联网部署了全套的公共后台服务：
 
-Throughout this guide there are a number of small-but-handy pieces of
-information that can make using Jekyll easier, more interesting, and less
-hazardous. Here’s what to look out for.
+- 7 x 24小时不间断的模拟实时行情
+- 高仿真模拟实时交易服务
+- 实时风控服务
+- 实时绩效运算服务
 
-<div class="note">
-  <h5>ProTips™ help you get more from Jekyll</h5>
-  <p>These are tips and tricks that will help you be a Jekyll wizard!</p>
-</div>
+方便大家随时随地免费接入，全天候进行策略开发、调试、回验和paper trading，不再受到交易时间的限制，以最高的效率保证策略快速上线实盘.
 
-<div class="note info">
-  <h5>Notes are handy pieces of information</h5>
-  <p>These are for the extra tidbits sometimes necessary to understand
-     Jekyll.</p>
-</div>
-
-<div class="note warning">
-  <h5>Warnings help you not blow things up</h5>
-  <p>Be aware of these messages if you wish to avoid certain death.</p>
-</div>
-
-<div class="note unreleased">
-  <h5>You'll see this by a feature that hasn't been released</h5>
-  <p>Some pieces of this website are for future versions of Jekyll that
-    are not yet released.</p>
-</div>
-
-If you come across anything along the way that we haven’t covered, or if you
-know of a tip you think others would find handy, please [file an
-issue]({{ site.repository }}/issues/new) and we’ll see about
-including it in this guide.
+* 注：对于机构客户，整套服务将根据实际情况落地部署在客户自己的内部环境中，可以完全避免互联网的网络延迟。
