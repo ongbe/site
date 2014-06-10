@@ -36,6 +36,41 @@ Python SDK下载后解压目录结构如下：
 
 * 首先，修改.ini配置文件，用申请到的用户名、密码、策略ID分别替换相应的your name, your password, strategy_id文字内容；
 
+Python程序中，需要注意，是用配置文件初始化的。
+
+```python  
+    # init with config file
+    strategy = StrategySimple(config_file='strategy.ini')
+
+    print 'strategy ready, waiting ......'
+```
+
+```ini
+[gm]
+md_uri=tcp://211.154.152.181:5103
+tr_uri=tcp://211.154.152.181:5050
+query_uri=tcp://211.154.152.181:5104
+username=your username
+password=your password
+strategy_id=your strategy_id
+
+```
+
+如果用参数而不是配置文件，则需要修改程序中的如下部分代码中的your name, your password, your strategy_id为相应内容：
+
+```python
+    # init by arguments
+    strategy = StrategySimple(
+        md_uri='tcp://211.154.152.181:5106',
+        tr_uri='tcp://211.154.152.181:5050',
+        query_uri='tcp://211.154.152.181:5104',
+        username='your username',
+        password='your password',
+        strategy_id='your strategy_id',
+        subscribe_symbols='SHFE.*.tick,CFFEX.IF1406.bar.60',  # 订阅tick和60s周期bar
+    )
+```
+
 * 在命令行终端， 运行如下命令：
 
 ```
