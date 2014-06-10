@@ -3,7 +3,7 @@ layout: docs
 title: C/C++策略示例  
 prev_section: github-pages
 next_section: manual-deployment
-permalink: /docs/python_examples/
+permalink: /docs/cpp_examples/
 ---
 
 
