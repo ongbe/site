@@ -17,7 +17,7 @@ permalink: /docs/quickstart/
 
 ### Python策略运行环境的准备
 
-Python策略的运行依赖于Python环境和掘金SDK包Python版，相关环境的准备可参考[Python策略开发指引](/docs/python_tut/)中的环境准备部分。
+Python策略的运行依赖于Python环境和掘金SDK包Python版，相关环境的准备可参考[Python策略开发指引]({{site.baseurl}}/docs/python_tut/)中的环境准备部分。
 
 Python SDK下载后解压目录结构如下：
 
