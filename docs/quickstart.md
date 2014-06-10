@@ -32,7 +32,7 @@ Python SDK下载后解压目录结构如下：
 其中lib目录下是需要安装到python环境下的策略开发包，examples目录下是提供的演示策略。
 
 ### 策略运行
-我们以strategy_simple.py为例，讲解如下运行这个策略。
+我们以strategy_dualma.py为例，讲解如下运行这个策略。
 
 * 首先，修改.ini配置文件，用申请到的用户名、密码、策略ID分别替换相应的your name, your password, strategy_id文字内容；
 
@@ -40,9 +40,9 @@ Python程序中，需要注意，是用配置文件初始化的。
 
 ```python  
     # init with config file
-    strategy = StrategySimple(config_file='strategy.ini')
+    strategy = DualMA(config_file='strategy_dual_ma.ini')
 
-    print 'strategy ready, waiting ......'
+    print 'strategy ready, waiting for market data ......'
 ```
 
 ```ini
@@ -60,21 +60,21 @@ strategy_id=your strategy_id
 
 ```python
     # init by arguments
-    strategy = StrategySimple(
+    strategy = DualMA(
         md_uri='tcp://211.154.152.181:5106',
         tr_uri='tcp://211.154.152.181:5050',
         query_uri='tcp://211.154.152.181:5104',
         username='your username',
         password='your password',
         strategy_id='your strategy_id',
-        subscribe_symbols='SHFE.*.tick,CFFEX.IF1406.bar.60',  # 订阅tick和60s周期bar
+        subscribe_symbols='CFFEX.IF1406.tick,CFFEX.IF1406.bar.15',  # 订阅tick和15s周期bar
     )
 ```
 
 * 在命令行终端， 运行如下命令：
 
 ```
-   python strategy_simple.py
+   python strategy_dual_ma.py
 ```
 就可以发现策略会把收到的相应行情数据，以及下单、成交等信息打印出来。
 
