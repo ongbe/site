@@ -5,8 +5,8 @@ relative_permalinks: false
 gauges_id: 503c5af6613f5d0f19000027
 permalink: /news/:year/:month/:day/:title/
 excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
-repository: https://github.com/myquant/myquant
-help_url: https://github.com/jekyll/jekyll-help
+repository: https://github.com/myquant/gmsdk
+help_url: https://github.com/myquant/gmsdk-help
 google_analytics_id: UA-50755011-1
 baidu_analytics_id: baidu_id
 bshare_id: b23de7db-50a9-4193-a0fe-ea37c42ccab1

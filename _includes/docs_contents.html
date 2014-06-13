@@ -1,7 +1,7 @@
 <div class="unit one-fifth hide-on-mobiles">
   <div>
     {% for section in site.data.docs %}
-    <div class="headline headline-md"><h5>{{ section.title }}</h5></div>
+    <div class="headline headline-md"><h5><strong>{{ section.title }}</strong></h5></div>
     {% include docs_ul.html items=section.docs %}
     <div class="margin-bottom-20"></div>
     {% endfor %}

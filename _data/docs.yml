@@ -4,11 +4,9 @@
   - quickstart
   - gmsdk_intro
 
-- title: 策略监控
+- title: 策略终端
   docs:
-  - gui_prof
-  - gui_enter
-  - drafts
+  - terminal
 
 - title: 策略开发：C/C++
   docs:
@@ -33,9 +31,7 @@
 - title: 常见问题解答(FAQ)
   docs:
   - troubleshooting
-  - sites
 
-- title: Meta
+- title: 其他
   docs:
-  - contributing
   - history

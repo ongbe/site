@@ -1,5 +1,5 @@
 <div class="posts margin-bottom-40">
-  <div class="headline headline-md"><h5>新闻分类</h5></div>
+  <div class="headline headline-md"><h5><strong>新闻分类</strong></h5></div>
   <ul class="list-unstyled">
     <li class="{% if page.title == 'News' %}active{% endif %}">
       <a href="{{ site.baseurl }}/news/"><i class="fa fa-tags"></i> 全部新闻</a>
@@ -11,7 +11,7 @@
 </div>
 
 <div class="posts margin-bottom-40">
-  <div class="headline headline-md"><h5>近期版本</h5></div>
+  <div class="headline headline-md"><h5><strong>近期版本</strong></h5></div>
   <ul class="list-unstyled">
     {% for post in site.posts limit:5 %}
     <li class="{% if page.title == post.title %}active{% endif %}">
