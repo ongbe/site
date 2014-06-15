@@ -665,7 +665,7 @@ a.thumbnail {
 .testimonials.testimonials-v1 .item p {
 	padding: 15px;
 	font-size: 14px;
-	font-style: italic;
+	/*font-style: italic;*/
 	position: relative;
 	background: #fafafa;
 }
