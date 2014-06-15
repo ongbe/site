@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: C/C++策略示例  
+title: 量化策略是什么 
 prev_section: 
 next_section: troubeshooting
 permalink: /docs/what_is_it/
