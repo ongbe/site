@@ -10,3 +10,13 @@
 .magazine-page .active a {
     color: #fff !important;
 }
+
+.carousel-caption h1
+{
+    font-size: 80px;
+}
+
+.carousel-caption .caption-text
+{
+    background: rgba(0,0,0,0.5);
+}
