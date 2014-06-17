@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5 {
    margin-top: 5px; 
    text-shadow: none; 
    font-weight: normal !important; 
+   line-height: 1.6em;
    font-family: 'Microsoft Yahei', 'Open Sans', sans-serif; 
 } 
 h1 i, h2 i, h3 i, h4 i, h5 i {
