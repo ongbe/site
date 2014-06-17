@@ -1,4 +1,4 @@
-baseurl: "/site"
+baseurl: "/"
 markdown: redcarpet
 pygments: true
 highlighter: pygments
