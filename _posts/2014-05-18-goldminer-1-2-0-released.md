@@ -1,7 +1,7 @@
 ---
 layout: news_item
 title: 掘金 1.2.0 版本发布
-date: "2014-05-19 08:00:00 +0800"
+date: "2014-05-18 08:00:00 +0800"
 author: 掘金团队
 version: 1.2.0
 categories: [产品发布]

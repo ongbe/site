@@ -1,9 +1,9 @@
 ---
 layout: news_item
-title: 掘金量化交易平台
+title: 软件著作权登记
 date: "2014-05-19 08:00:00 +0800"
 author: 掘金团队
-version: 1.0.0
+version: 
 categories: [新闻动态]
 ---
 

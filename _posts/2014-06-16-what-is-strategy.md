@@ -3,7 +3,7 @@ layout: news_item
 title: 量化策略是什么 
 date: "2014-06-16 08:00:00 +0800"
 author: 掘金团队
-version: 1.2.2
+version: 
 categories: [产品新闻]
 ---
 
