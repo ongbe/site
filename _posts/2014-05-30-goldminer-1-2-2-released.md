@@ -4,7 +4,7 @@ title: 掘金 1.2.2 版本发布
 date: "2014-05-30 08:00:00 +0800"
 author: 掘金团队
 version: 1.2.2
-categories: [产品发布]
+categories: [release]
 ---
 
 
