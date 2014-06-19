@@ -24,7 +24,7 @@ permalink: /docs/terminal/
 ## 工作区域介绍
 
 产品主要工作区域分为3个部分（菜单区、主监控区、系统消息区），如下图：
-![image]({{site.baseurl}}/images/docs/terminal/main.jpb)
+![image](/images/docs/terminal/main.jpg)
 
 **系统主要功能包括：**
 

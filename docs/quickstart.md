@@ -88,7 +88,7 @@ strategy_id=your strategy_id
 
 策略运行情况查看
 
-![strategy]({{site.baseurl}}/images/docs/term_strategy_run.png) 
+![strategy]({{site.baseurl}}/images/docs/terminal/main.jpg) 
 
   
 
