@@ -102,7 +102,7 @@ on_tick -> on_bar
 on_order_rejected
 on_order_new -> on_order_filled
 on_order_new -> on_order_partially_filled -> on_order_filled
-on_order_new -> on_order_partially_filled -> on_order_rejected
+on_order_new -> on_order_partially_filled -> on_order_expired
 on_order_new -> on_order_partially_filled -> on_order_stop_executed
 on_order_new -> on_order_rejected
 on_order_new -> on_order_stop_executed
@@ -166,6 +166,7 @@ open_long("CFFEX.IF1406", 2206, 1);  # 开多`CFFEX.IF1406` 1手，限价单，�
 参数中的日期时间，都采用字符串格式定义，格式遵循定义： `YYYY-mm-DD HH:MM:SS`
 
 函数调用实例
+
 ``` python
 get_ticks("CFFEX.IF1406", "2014-02-25 09:30:00", "2014-02-25 12:00:00"); # 提取指定区间历史tick数据
 ```
@@ -191,7 +192,7 @@ symbol_list 订阅代码表,参数格式如下：
     *    CFFEX.IF1403.*,CFFEX.IF1312.* : 中金所,IF1403和IF1312所有数据(订阅多个代码)
 ```
 
-## 掘金SDK关键API接口
+#### 掘金SDK关键API接口
 
 本节介绍关键的API接口，主要包括5个类：策略基类，实时行情， 历史数据提取，历史行情回放，交易。策略基类汇集了其他4个类的功能接口，以便于策略编写时灵活的调取数据、下单和接收执行回报等。另一方面，以上几个类也可以各自独立使用，比如单独使用实时行情接口，单独使用历史数据接口，单独回放历史行情，单独调用交易下单或查询接口等。
 

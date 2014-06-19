@@ -18,15 +18,13 @@ permalink: /docs/terminal/
 **1.终端安装**
 双击安装应用程序goldminer-install.exe，进入安装向导，根据向导完成安装。
 
-![](http://i.imgur.com/BTQaCzH.png)
-
 **2.终端升级**
 启动应用程序时，系统首先会检测程序是否有升级，如有升级，弹出升级对话框，用户可决定立即升级或以后更新。
 
 ## 工作区域介绍
 
 产品主要工作区域分为3个部分（菜单区、主监控区、系统消息区），如下图：
-![](http://i.imgur.com/OcCyHgx.png =250x)
+![image]({{site.baseurl}}/images/docs/terminal/main.jpb)
 
 **系统主要功能包括：**
 

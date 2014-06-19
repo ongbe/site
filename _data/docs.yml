@@ -15,12 +15,16 @@
 
 - title: 策略开发：C#
   docs:
-  - csharp_tut
+  - csharp_env
+  - csharp_type
+  - csharp_api
   - csharp_examples
 
 - title: 策略开发：Python
   docs:
   - python_tut
+  - python_type
+  - python_api
   - python_examples
 
 - title: 策略开发：Matlab
