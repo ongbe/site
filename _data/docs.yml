@@ -27,15 +27,11 @@
   - python_api
   - python_examples
 
-- title: 策略开发：Matlab
-  docs:
-  - matlab_tut
-  - matlab_examples
 
 - title: 常见问题解答(FAQ)
   docs:
   - what_is_it
-  - troubleshooting
+  - how_to_do
 
 - title: 其他
   docs:
