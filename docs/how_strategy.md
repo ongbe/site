@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Python策略开发指引  
+title: 如何开发策略  
 prev_section: 
 next_section: 
 permalink: /docs/how_to_do/
