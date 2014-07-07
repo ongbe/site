@@ -1,9 +1,10 @@
 ---
-layout: docs
+layout: news_item
 title: 策略风险控制  
-prev_section: 
-next_section: 
-permalink: /docs/risk_control/
+date: "2014-07-07 08:00:00 +0800"
+author: 掘金团队
+version: 
+categories: [产品新闻]
 ---
 
 ###策略风险控制
