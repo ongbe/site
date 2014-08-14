@@ -191,7 +191,7 @@ strategy = MyStrategy(config_file="strategy_simple.ini")
 
 ##### 运行/停止策略
 
-- **run 函数**
+- `run` 函数
 
 运行策略，直到用户关闭策略，或策略内部调用`stop`函数。
 
@@ -207,7 +207,7 @@ run()
 * @return 0：成功, 其他： error code(注：参见SDK错误代码定义文档，或头文件gm_error_code.h) 
 ```
 
-- **stop 函数**
+- `stop` 函数
 
 
 函数原型：
@@ -224,7 +224,7 @@ stop()
 
 ##### 行情订阅管理
 
-- **subscribe函数**
+- `subscribe` 函数
 
 订阅行情
 
@@ -264,7 +264,7 @@ subscribe(symbol_list)
 strategy.subscribe("CFFEX.IF1406.tick, CFFEX.IF1406.bar.60");
 ```
 
-- **unsubscribe函数**
+- `unsubscribe` 函数
 
 退订行情
 
@@ -282,7 +282,7 @@ unsubscribe(symbol_list);
 ##### 数据提取
 
 
-- **get_ticks函数**
+- `get_ticks` 函数
 
 提取指定时间段的历史Tick数据，支持单个代码提取或多个代码组合提取。
 
@@ -303,7 +303,7 @@ def get_ticks(self, symbols, begin_time, end_time, reserve_file='')
 * @return tick数据列表
 ```
 
-- **get_bars函数**
+- `get_bars` 函数
 
 提取指定时间段的历史Bar数据，支持单个代码提取或多个代码组合提取。
 
@@ -325,7 +325,7 @@ def get_bars(self, symbols, bar_type, begin_time, end_time, reserve_file='')
 * @return bar数据列表
 ```
 
-- **get_trades函数**
+- `get_trades` 函数
 
 提取指定时间段的历史Trade数据，支持单个代码提取或多个代码组合提取。
 
@@ -346,7 +346,7 @@ def get_trades(self, symbols, begin_time, end_time, reserve_file='')
 * @return Trade数据列表
 ```
 
-- **get_dailybars函数**
+- `get_dailybars` 函数
 
 提取指定时间段的历史日周期Bar数据，支持单个代码提取或多个代码组合提取。DailyBar比Bar多了部分静态数据，如结算价，涨跌停等。
 
@@ -367,7 +367,7 @@ def get_dailybars(self, symbols, begin_time, end_time, reserve_file='')
 * @return DailyBar数据列表
 ```
 
-- **get_last_ticks函数**
+- `get_last_ticks` 函数
 
 提取最新n条Tick数据，支持单个代码提取或多个代码组合提取。如果单个代码，可以提取该代码最新的1-n条数据，如果提取多个组合代码，则只能提取每个组合代码最新的1条数据。
 
@@ -386,7 +386,7 @@ def get_last_ticks(self, symbols, n=1)
 * @return tick数据列表
 ```
 
-- **get_last_bars函数**
+- `get_last_bars` 函数
 
 提取最新n条Bar数据，支持单个代码提取或多个代码组合提取。如果单个代码，可以提取该代码最新的1-n条数据，如果提取多个组合代码，则只能提取每个组合代码最新的1条数据。
 
@@ -405,7 +405,7 @@ def get_last_bars(self, symbols, bar_type, n=1)
 * @return Bar数据列表
 ```
 
-- **get_last_dailybars函数**
+- `get_last_dailybars` 函数
 
 提取最新n条DailyBar数据，支持单个代码提取或多个代码组合提取。如果单个代码，可以提取该代码最新的1-n条数据，如果提取多个组合代码，则只能提取每个组合代码最新的1条数据。
 
@@ -424,7 +424,7 @@ def get_last_dailybars(self, symbols, n=1)
 * @return DailyBar数据列表
 ```
 
-- **get_ticks_by_timepoint函数**
+- `get_ticks_by_timepoint` 函数
 
 提取指定时间点的Tick数据，支持单个代码提取或多个代码组合提取。如果指定时间点没有数据，则根据left_right参数靠前或靠后提取最近一条数据，left_right默认为0，靠前提取。
 
@@ -447,7 +447,7 @@ def get_ticks_by_timepoint(self, symbols, timepoint, left_right=0)
 
 掘金SDK包含便利的下单，撤单，以及相关交易查询函数。
 
-- **open_long函数**
+- `open_long` 函数
 
 开多仓，以参数指定的symbol, 价和量下单。如果价格为0，为市价单，否则为限价单。
 
@@ -468,7 +468,7 @@ def open_long(self, symbol, price, volume)
 ```
 
 
-- **open_short函数**
+- `open_short` 函数
 
 开空仓，以参数指定的symbol, 价和量下单。如果价格为0，为市价单，否则为限价单。
 
@@ -488,7 +488,7 @@ def open_short(self, symbol, price, volume)
 * @return Order 委托下单生成的Order对象
 ```
 
-- **close_long函数**
+- `close_long` 函数
 
 平多仓，以参数指定的symbol, 价和量下单。如果价格为0，为市价单，否则为限价单。
 
@@ -509,7 +509,7 @@ def close_long(self, symbol, price, volume)
 ```
 
 
-- **close_short函数**
+- `close_short` 函数
 
 平空仓，以参数指定的symbol, 价和量下单。如果价格为0，为市价单，否则为限价单。
 
@@ -530,7 +530,7 @@ def close_short(self, symbol, price, volume)
 ```
 
 
-- **place_order函数**
+- `place_order` 函数
 
 
 下单原生函数，需要创建Order对象，填充对应字段，一般建议使用上面4个快捷下单接口。如果价格price字段为0，为市价单，否则为限价单。
@@ -549,7 +549,7 @@ def place_order(self, order)
 * @return Order 直接返回参数order对象
 ```
 
-- **cancel_order函数**
+- `cancel_order` 函数
 
 撤单，根据参数cl_ord_id指定的客户端订单ID，撤销之前的下单委托。取决于订单当前的状态，撤单可能成功，也可能被拒绝。
 
@@ -567,7 +567,7 @@ def cancel_order(self, cl_ord_id)
 * @return 返回0，执行成功，否则返回错误码。cancel_order是异步请求，执行的结果由on_execution, on_order_cancelled, on_order_cancel_rejected回调返回。
 ```
 
-- **get_order函数**
+- `get_order` 函数
 
 查询委托订单，返回订单当前的最新状态，如果订单不存在，返回null。
 
@@ -586,7 +586,7 @@ def get_order(self, cl_ord_id)
 ```
 
 
-- **get_cash函数**
+- `get_cash` 函数
 
 查询当前策略的资金信息。
 
@@ -604,7 +604,7 @@ def get_cash(self)
 ```
 
 
-- **get_position函数**
+- `get_position` 函数
 
 查询当前策略指定symbol和买卖方向的持仓信息。
 
@@ -623,7 +623,7 @@ def get_position(self, symbol, side)
 * @return Position  持仓信息。
 ```
 
-- **get_positions函数**
+- `get_positions` 函数
 
 查询当前策略的全部持仓信息。
 
@@ -644,7 +644,7 @@ def get_positions(self)
 
 响应行情事件的虚函数，改写这些函数添加策略逻辑。
 
-- **on_tick函数**
+- `on_tick` 函数
 
 响应Tick事件，收到Tick数据后本函数被调用。
 
@@ -660,7 +660,7 @@ def on_tick(self, tick)
 * @param tick Tick数据
 ```
 
-- **on_bar函数**
+- `on_bar` 函数
 
 响应Bar事件，收到Bar数据后本函数被调用。
 
@@ -676,7 +676,7 @@ def on_bar(self, bar)
 * @param bar Bar数据
 ```
 
-- **on_trade函数**
+- `on_trade` 函数
 
 
 响应Trade事件，收到Trade数据后本函数被调用。
@@ -696,7 +696,7 @@ def on_trade(self, trade)
 
 ##### 交易事件
 
-- **on_execution函数**
+- `on_execution` 函数
 
 
 响应委托执行回报事件，收到Execution数据后本函数被调用。
@@ -708,11 +708,12 @@ def on_execution(self, execution)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param execution Execution数据
 ```
 
-- **on_order_rejected函数**
+- `on_order_rejected` 函数
 
 响应订单`被拒绝`事件，收到Order变更数据后本函数被调用。
 
@@ -728,7 +729,7 @@ def on_order_rejected(self, order)
 * @param order 最新的Order状态
 ```
 
-- **`on_order_new`函数**
+- `on_order_new` 函数
 
 响应订单`被交易所接受`事件，收到Order变更数据后本函数被调用。
 
@@ -744,7 +745,7 @@ def on_order_new(self, order)
 * @param order 最新的Order状态
 ```
 
-- **on_order_filled函数**
+- `on_order_filled` 函数
 
 响应订单`完全成交`事件，收到Order变更数据后本函数被调用。
 
@@ -760,7 +761,7 @@ def on_order_filled(self, order)
 * @param order 最新的Order状态
 ```
 
-- **on_order_partially_filled函数**
+- `on_order_partially_filled` 函数
 
 响应订单`部分成交`事件，收到Order变更数据后本函数被调用。
 
@@ -776,7 +777,7 @@ def on_order_partially_filled(self, order)
 * @param order 最新的Order状态
 ```
 
-- **on_order_stop_executed函数**
+- `on_order_stop_executed` 函数
 
 响应订单`停止执行`事件，比如，限价单到收市仍然未能成交。收到Order变更数据后本函数被调用。
 
@@ -792,7 +793,7 @@ def on_order_stop_executed(self, order)
 * @param order 最新的Order状态
 ```
 
-- **on_order_cancelled函数**
+- `on_order_cancelled` 函数
 
 响应订单`撤单成功`事件，收到Order变更数据后本函数被调用。
 
@@ -808,7 +809,7 @@ def on_order_cancelled(self, order)
 * @param order 最新的Order状态
 ```
 
-- **on_order_cancel_rejected函数**
+- `on_order_cancel_rejected` 函数
 
 响应订单`撤单请求被拒绝`事件，收到Execution数据后本函数被调用。`Execution.ord_rej_reason`说明为什么撤单失败。
 
@@ -826,7 +827,7 @@ def on_order_cancel_rejected(self, execution)
 
 ##### 其他事件
 
-- **on_error函数**
+- `on_error` 函数
 
 响应`错误`事件，策略内部出现错误时，比如行情或交易连接断开，数据错误，超时等，将触发本函数。
 
@@ -843,7 +844,7 @@ def on_error(int error_code)
 ```
 
 
-- **on_md_event函数**
+- `on_md_event` 函数
 
 响应`行情状态`事件，收到MarketDataEvent数据后本函数被调用。
 
