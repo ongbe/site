@@ -728,7 +728,7 @@ def on_order_rejected(self, order)
 * @param order 最新的Order状态
 ```
 
-- **on_order_new函数**
+- **`on_order_new`函数**
 
 响应订单`被交易所接受`事件，收到Order变更数据后本函数被调用。
 
