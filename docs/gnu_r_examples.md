@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: R语言gmsdk使用说明  
+title: R语言策略的编写  
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/gnu_r_examples/
