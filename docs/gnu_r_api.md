@@ -5,7 +5,7 @@ prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/gnu_r_api/
 ---
-
+![image](http://www.r-project.org/Rlogo.jpg)
 本节介绍R语言版gmsdk包的API接口，方便在R环境中完成实时行情订阅、历史数据提取、历史行情回放，交易。gm_前缀的函数汇集了其他类的功能接口，以便于策略的编写时完成灵活的调取数据、下单和接收执行回报等功能。
 另一方面，实时行情(live)、历史行情查询(query)和回放(playback)、交易(trade)四个部分功能都可以分别独立使用，比如单独使用实时行情接口，单独使用历史数据接口，单独回放历史行情，单独调用交易下单或查询接口等。
 

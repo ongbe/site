@@ -9,8 +9,9 @@ permalink: /docs/gnu_r_tut/
 本节简单介绍如何在R环境中安装和使用gmsdk
 
 ### R语言环境的安装
+![image](http://www.r-project.org/Rlogo.jpg)
 
-linux或其他类unix操作系统中，R语言环境的安装大多推荐是用源码安装方式，tar包请从http://cran.r-projects.org/下载, 因为需要Rcpp扩展包的支持，请选择最新的R3.1+版本。
+linux或其他类unix操作系统中，R语言环境的安装大多推荐是用源码安装方式，tar包请从［Cran镜像］(http://cran.r-projects.org/)下载, 因为需要Rcpp扩展包的支持，请选择最新的R3.1+版本。
 
 解压后进入目录，运行命令
 $ ./configure
@@ -21,7 +22,7 @@ $ make
 $ aptitude search r-cran- 
 可根据需要选择安装相应的二进制包，不需要自己编译。
 
-windows环境下，可以直接选择下载R-3.1.1-win.exe，注意跟你的操作系统32位还是64位来选择，然后在本地运行即可。
+windows环境下，可以直接选择下载[R-3.1.1-win.exe](http://cran.r-project.org/bin/windows/base/R-3.1.1-win.exe)，安装注意根据你的操作系统32位还是64位来选择，然后在本地运行即可。
 
 ### R环境中扩展包的安装
 首先，运行R，或R的图形界面窗口中的菜单。
