@@ -9,7 +9,9 @@ permalink: /docs/gnu_r_tut/
 本节简单介绍如何在R环境中安装和使用gmsdk
 
 ### R语言环境的安装
+
 ![image](http://www.r-project.org/Rlogo.jpg)
+
 
 linux或其他类unix操作系统中，R语言环境的安装大多推荐是用源码安装方式，tar包请从［Cran镜像］(http://cran.r-projects.org/)下载, 因为需要Rcpp扩展包的支持，请选择最新的R3.1+版本。
 
