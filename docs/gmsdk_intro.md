@@ -25,12 +25,12 @@ permalink: /docs/gmsdk_intro/
 
 ## 掘金SDK支持的开发语言和操作系统
 
-掘金SDK目前支持C, C++, C#, Python, Matlab（*通过C#支持*）5种语言，大家可以选择自己最熟悉、最趁手的语言来开发策略。5种开发语言支持的功能均完整一致，API风格统一，并有完善的开发文档和示例程序，方便快速上手。
+掘金SDK目前支持C, C++, C#, Python, GNU R, Matlab（*通过C#支持*）6种语言，大家可以选择自己最熟悉、最趁手的语言来开发策略。5种开发语言支持的功能均完整一致，API风格统一，并有完善的开发文档和示例程序，方便快速上手。
 
 SDK同时支持Windows和Linux操作系统，各操作系统支持的语言如下：
 
-- Windows： C, C++, C#, Python
-- Linux： C, C++, Python
+- Windows： C, C++, C#, Python, R
+- Linux： C, C++, Python, R
 
 
 ## 关于开发工具
@@ -40,6 +40,7 @@ SDK同时支持Windows和Linux操作系统，各操作系统支持的语言如�
 - C，C++语言： vc++, gcc, eclipse cdt
 - C#语言: visual studio, mono
 - Python: pycharm, pydev, 或任何文本编辑器即可
+- R: GNU R环境或其他文本编辑器，如Emacs + ESS
 - Matlab: matlab
 
 
