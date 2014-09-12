@@ -39,6 +39,8 @@ windows环境下，可以直接选择下载[R-3.1.1-win.exe](http://cran.r-proje
 
 比如我的机器中，扩展包目录是```~/R/i486-pc-linux-gnu-library/3.1/```
 
+Windows环境下，通常可以把解压的gmsdk.dll直接放在R安装目录下的library中，类似于```<R_HOME>\library\gmsdk\libs\i386\```
+
 ### R环境中使用扩展包
 先需要加载包，用命令：
 
