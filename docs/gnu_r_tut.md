@@ -44,12 +44,12 @@ Windows环境下，通常可以把解压的gmsdk.dll直接放在R安装目录下
 ### R环境中使用扩展包
 先需要加载包，用命令：
 
-```R
+```
 > library('gmsdk')
 ```
 或
 
-```R
+```
 > require('gmsdk')  
 ```
 
@@ -62,7 +62,7 @@ Windows环境下，通常可以把解压的gmsdk.dll直接放在R安装目录下
 ### 检查和使用
 安装好后，输入如下命令检查：
 
-```R
+```
 > gmsdk::version()
 [1] "v1.1.0"
 
@@ -70,7 +70,7 @@ Windows环境下，通常可以把解压的gmsdk.dll直接放在R安装目录下
 
 使用我们提供的互联网上演示服务，测试下历史数据的查询：
 
-```R
+```
 > query_uri = "tcp://211.154.152.181:5104"
 
 > gmsdk::query_init(query_uri, username, password)

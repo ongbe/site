@@ -32,7 +32,7 @@ permalink: /docs/gnu_r_api/
 
 以下是StrategyBase类的完整接口：
 
-```R
+```
 # SDK服务初始化、启动、停止
 gmsdk::gm_init,  掘金服务初始化     
 gmsdk::gm_start, 启动
@@ -113,7 +113,7 @@ gmsdk::version
 
 举例如下：
 
-```R
+```
 > gmsdk::query_bars('CFFEX.IF1409', 300, '2014-09-09 09:15:00', '2014-09-09 09:30:00')
             timestamp       bar_time exchange symbol   open   high    low
 1 2014-09-09 09:19:59 20140909091500    CFFEX IF1409 2471.4 2473.0 2468.8
@@ -126,7 +126,7 @@ gmsdk::version
 ```
 如果对应时间段没有数据，会返回如下信息:
 
-```R
+```
 > gmsdk::query_bars('CFFEX.IF1409', 15, '2014-09-08 09:15:00', '2014-09-08 09:30:00')
              ERROR
 1 该条件没查到数据
