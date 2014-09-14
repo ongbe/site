@@ -30,7 +30,7 @@ permalink: /docs/gnu_r_api/
 
 ##### gmsdk包提供的函数列表 
 
-以下是StrategyBase类的完整接口：
+以下是gmsdk包的完整接口：
 
 ```
 # SDK服务初始化、启动、停止
