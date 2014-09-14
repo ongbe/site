@@ -13,15 +13,22 @@ permalink: /docs/gnu_r_tut/
 ![image](http://www.r-project.org/Rlogo.jpg)
 
 
-linux或其他类unix操作系统中，R语言环境的安装大多推荐是用源码安装方式，tar包请从［Cran镜像］(http://cran.r-projects.org/)下载, 因为需要Rcpp扩展包的支持，请选择最新的R3.1+版本。
+linux或其他类unix操作系统中，R语言环境的安装大多推荐是用源码安装方式，tar包请从[Cran镜像](http://cran.r-projects.org/)下载, 因为需要Rcpp扩展包的支持，请选择最新的R3.1+版本。
 
 解压后进入目录，运行命令
+
+```
 $ ./configure
 $ make
+```
 
 另外，现在常用的linuxn发行版本，如debian,CentOS等都有直接可用的二进制安装包。
 比如，在debian下，用包管理器可以查到相关的R扩展工具包：
+
+```
 $ aptitude search r-cran- 
+```
+
 可根据需要选择安装相应的二进制包，不需要自己编译。
 
 windows环境下，可以直接选择下载[R-3.1.1-win.exe](http://cran.r-project.org/bin/windows/base/R-3.1.1-win.exe)，安装注意根据你的操作系统32位还是64位来选择，然后在本地运行即可。
@@ -30,7 +37,11 @@ windows环境下，可以直接选择下载[R-3.1.1-win.exe](http://cran.r-proje
 首先，运行R，或R的图形界面窗口中的菜单。
 下面以控制台命令为例说明：
 知道package名，要安装，可以直接运行install.packages('package_name') 命令，把参数换成你需要的扩展包名即可，比如需要安装xts
+
+```
 > install.packages('xts')
+```
+
 会让你选择镜像站点，然后安装过程是全自动的，包括依赖的包也会自动完成，上例中, 会先安装zoo包
 
 如果记不清楚包名，还可以直接不带参数，install.packages()会返回所有的可用包列表。
