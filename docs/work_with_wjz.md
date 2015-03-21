@@ -44,6 +44,7 @@ permalink: /docs/work_with_wjz/
 如图：
 
 编辑产品页面
+
 ![Image]({{site.baseurl}}/images/docs/wjz/edit_prod.png)
 
 注意第二行，产品ID，这一项是只读的，移动下鼠标到这个框，双击鼠标按键，或者按“ctrl + A"，*确保选中全部内容*。
