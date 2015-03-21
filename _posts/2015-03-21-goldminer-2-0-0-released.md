@@ -1,10 +1,10 @@
 ---
 layout: news_item
-title: 新版SDK  
-date: "2015-03-21 09:00:00 +0800"
+title: '掘金 SDK V2.0.0 版本发布'
+date: 2015-03-21 22:43:17 
 author: 掘金团队
-version: 
-categories: [产品新闻]
+version: 2.0.0
+categories: [release]
 ---
 
 掘金量化SDK升级到V2.0.0了！ 
