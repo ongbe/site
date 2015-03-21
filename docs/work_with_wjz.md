@@ -1,12 +1,12 @@
 ---
 layout: docs
-title: 挖金子网上查看  
+title: 挖金子网上试用  
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/work_with_wjz/
 ---
 
-在挖金子网（[link](http://www.wajinzi.me/)）上展示您的量化策略，只需要三步：
+在挖金子网（[link](http://www.wajinzi.me/)）上试用您的量化策略，只需要三步：
 
 1. 注册成为专家用户；
 2. 创建一个量化产品；
