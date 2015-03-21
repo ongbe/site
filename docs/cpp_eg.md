@@ -9,7 +9,6 @@ permalink: /docs/cpp_examples/
 
 ### C语言策略
 
-
 以下是一个简单的C语言策略示例，直接使用SDK的各回调接口,通过行情数据驱动运行。
 这个策略主要处理逻辑在on_tick函数，在接收到SDK转发的tick数据后，进行有规律地开、平仓动作；
 其他on_trade, on_bar, on_event 方法中没有具体的业务逻辑，可以用这个文件作为模板，根据需要进行扩展。
@@ -17,159 +16,156 @@ permalink: /docs/cpp_examples/
 程序入口函数main中， 首先是对SDK进行初始化操作，接下来是设置各事件的回调函数，依次是成交回报的处理函数、tick行情的处理函数、bar行情的处理函数、trade行情的处理函数、以及事件的处理函数；
 最后是策略的启动运行， 通过调用gm_run()进行。
 
-在策略的初始化部分，如果用参数直接配置，就像注释掉的```gm_future_init(...)```函数部分一样，不需要额外的配置文件，简单直观，但会导致每次修改参数时都需要重新编译代码，如果需要经常变换执行环境的参数设置，建议采用配置文件的方式，即用```gm_future_init_with_config()```函数来处理，SDK初始化过程会有返回值，可以通过返回值了解初始化是否成功，如果失败，返回值会表明失败的原因，示例程序中给出了各个错误代码的解释，并打印在控制台，方便策略程序的调试。
+在策略的初始化部分，如果用参数直接配置，就像注释掉的```strategy_init(...)``` 函数部分一样，不需要额外的配置文件，简单直观，但会导致每次修改参数时都需要重新编译代码。
+
+如果需要经常变换执行环境的参数设置，建议采用配置文件的方式，即用```strategy_init_with_config()```函数来处理，SDK初始化过程会有返回值，可以通过返回值了解初始化是否成功，如果失败，返回值会表明失败的原因，示例程序中给出了各个错误代码的解释，并打印在控制台，方便策略程序的调试。
 
 程序源文件如下：
 
 ```c
-	#include <stdio.h>
-	#include <stdlib.h>
-	#include <string.h>
-	#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
-	#include "gm_future.h"
-	#include "gm_future_api.h"
-		
-	int g_count;
-	
-	//处理逐笔行情事件
-	void on_tick(FutureTickData *tick)
-	{
-	    g_count++;
-	    int ret;
-   
-	    printf("symbol: %s price: %s\0", tick->sec_id, tick->last_price);
+#include "strategy.h"
 
-	    Sleep(20);
-	
-	    Order o;
-	    char symbol[32];
-	    if(g_count % 100 == 0)
+int g_count;
+
+//处理逐笔行情事件
+void on_tick(Tick *tick)
+{
+    g_count++;
+    int ret;
+  
+    printf("symbol: %s price: %s\0", tick->sec_id, tick->last_price);
+
+    Sleep(20);
+
+    Order o;
+    char symbol[32];
+    if(g_count % 100 == 0)
 	    {       
-	        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
-	    
-	        ret = gm_tr_future_open_long(symbol, tick->last_price, 3, &o);
-	        if(ret == 0)
+        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
+    
+        ret = gm_td_open_long(tick->exchange, tick->sec_id, tick->last_price, 3, &o);
+        if(ret == 0)
 	        {
-	            printf("开多: %s , strategy: %s, symbol: %s price %.2f volume %d \n", o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
+            printf("开多: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
+            o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
 	        }
-	        else
-                printf("Error code = %d \n", ret);
-	    }
-	    else if(g_count % 75 == 0)
-	    {       
-	        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
-	    
-	        ret = gm_tr_future_open_short(symbol, tick->last_price, 4, &o);
-	        if(ret == 0)
-	        {
-                printf("开空: %s , strategy: %s, symbol: %s price %.2f volume %d \n", o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
-	        }
-	        else
-                printf("Error code = %d \n", ret);
-	    }
-	    else if(g_count % 50 == 0)
-	    {       
-	        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
-	    
-	        ret = gm_tr_future_close_long(symbol, tick->last_price, 3, &o);
-	        if(ret == 0)
-	        {
-               printf("平多: %s , strategy: %s, symbol: %s price %.2f volume %d \n", o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
-	        }
-	        else
-               printf("Error code = %d \n", ret);
-	        
-	    }
-	    else if(g_count % 25 == 0)
-	    {       
-	        ret = sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
-	    
-	        ret = gm_tr_future_close_short(symbol, tick->last_price, 4, &o);
-	        if(ret == 0)
-	        {
-               printf("平空: %s , strategy: %s, symbol: %s price %.2f volume %d \n", o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
-	        }
-	        else
+        else
                printf("Error code = %d \n", ret);
 	    }
-	}
-	
-	//处理分时行情事件
-	void on_bar(FutureBarData *bar)
-	{
-	    printf("Bar symbol= %s open = %.2f close = %.2f \n", bar->sec_id, bar->open, bar->close);
-	}
-	
-	//处理行情中的成交事件
-	void on_trade(FutureTradeData *trade)
-	{
-	}
-	
-	//处理委托回报事件
-	void on_execution(Execution *res)
-	{
-        printf("成交回报: strategy: %s, symbol: %s price %.2f volume %d \n", 
-        res->strategy_id, res->symbol, res->price, res->volume);
-	}
-	
-	//如果是回放行情，行情文件播放完毕时退出策略
-	void on_event(MarketDataEvent *event)
-	{
-	    if (event->event_type == 3)
-	    {
-	        printf("finished playback\n");
-	        gm_future_stop();
+    else if(g_count % 75 == 0)
+	    {       
+        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
+    
+        ret = gm_td_open_short(tick->exchange, tick->sec_id, tick->last_price, 4, &o);
+        if(ret == 0)
+	        {
+               printf("开空: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
+               o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
+	        }
+        else
+               printf("Error code = %d \n", ret);
+	    }
+    else if(g_count % 50 == 0)
+	    {       
+        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
+    
+        ret = gm_td_close_long(tick->exchange, tick->sec_id, tick->last_price, 3, &o);
+        if(ret == 0)
+	        {
+              printf("平多: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
+              o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
+	        }
+        else
+              printf("Error code = %d \n", ret);
+        
+	    }
+    else if(g_count % 25 == 0)
+	    {       
+        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
+    
+        ret = gm_td_close_short(tick->exchange, tick->sec_id, tick->last_price, 4, &o);
+        if(ret == 0)
+	        {
+              printf("平空: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
+              o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
+	        }
+        else
+              printf("Error code = %d \n", ret);
 	    }
 	}
-	
-	int main(int argc, char *[])
-	{
-	    int ret;
-	
-	    //初始化策略,根据参数
+
+//处理分时行情事件
+void on_bar(Bar *bar)
+{
+    printf("Bar symbol= %s open = %.2f close = %.2f \n", bar->sec_id, bar->open, bar->close);
+}
+
+//处理委托回报事件
+void on_execution(ExecRpt *res)
+{
+   printf("成交回报: strategy: %s, symbol: %s price %.2f volume %d \n", 
+   res->strategy_id, res->symbol, res->price, res->volume);
+}
+
+//如果是回放行情，行情文件播放完毕时退出策略
+void on_event(MDEvent *event)
+{
+    if (event->event_type == 3)
+    {
+        printf("finished playback\n");
+        gm_future_stop();
+    }
+}
+
+int main(int argc, char *[])
+{
+    int ret;
+
+    //初始化策略,根据参数
 	    /*
-	    ret = gm_future_init(
-	        "tcp://211.154.152.181:5103",
-	        "tcp://211.154.152.181:5050",
-	        "tcp://211.154.152.181:5104",
-	        "username","password",
-	        "strategy_1",
-	        "CFFEX.IF1403.*"
-	        );
+    ret = strategy_init(
+        "120.24.228.187:8000",
+        "120.24.228.187:8001",
+        "username","password",
+        "strategy_1",
+        "CFFEX.IF1403.*");
 	    */
-	
-	    //初始化策略,根据配置文件
-	    ret = gm_future_init_with_config("test_strategy.ini");
-	
-	    //初始化失败，退出。
-	    printf("gm_future_init return: %s \n", gm_strerror(ret));       
-	
-	    if(ret )
+
+    //初始化策略,根据配置文件
+    ret = strategy_init_with_config("test_strategy.ini");
+
+    //初始化失败，退出。
+    printf("init return: %s \n", gm_strerror(ret));
+
+    if(ret )
 	    {
-	        system("pause");
-	        return ret;
+        system("pause");
+        return ret;
 	    }
-	
-	    // 设置事件回调函数
-	    gm_tr_future_set_execution_callback(on_execution);
-	    gm_md_future_set_tick_callback(on_tick);
-	    gm_md_future_set_bar_callback(on_bar);
-	    gm_md_future_set_trade_callback(on_trade);
-	    gm_md_future_set_event_callback(on_event);
-	    
-	    printf("策略起动成功!\n"); 
-	
-	    // 执行并等待策略运行结束
-	    ret = gm_run();
-	    return ret;
-	}
+
+    // 设置事件回调函数
+    gm_td_set_execrpt_callback(on_execution);
+    gm_md_set_tick_callback(on_tick);
+    gm_md_set_bar_callback(on_bar);
+    gm_md_set_event_callback(on_event);
+    
+    printf("策略起动成功!\n"); 
+
+    // 执行并等待策略运行结束
+    ret = gm_run();
+    return ret;
+}
+
 ```
 
-策略配置文件用的是直观的ini格式，支持Section, 其中gm部分为SDK所使用，这部分的配置可参考如下示例， 其中以`;`开始的部分表示注释掉的配置，可以是
+策略配置文件用的是直观的ini格式，支持Section, 其中gm部分为SDK所使用，这部分的配置可参考如下示例， 其中以`;`开始的部分表示注释掉的配置。
 
-- 	文件回放测试作为行情源：md_uri=file://SHFE.cu1403.tick，
-- 	或者是落地部署在本地的实时行情服务：md_uri=tcp://192.168.1.16:5103。
+- 	落地部署在本地的实时行情服务：md_addr=120.24.228.187:8000。
  	
 strategy_id： 
 
@@ -182,15 +178,14 @@ subscribe_symbols:
 配置文件示例：
 
 ```ini
-    [gm]    
-    md_uri=tcp://211.154.152.181:5103
-    tr_uri=tcp://211.154.152.181:5050
-    query_uri=tcp://211.154.152.181:5104
-    
-    username=username
-    password=yourpassword
-    strategy_id=03883f97-4d60-4843-bbc2-cc8752a04691
-    subscribe_symbols=SHFE.cu1401.TICK,SHFE.cu1403.TICK
+[strategy]
+md_addr=120.24.228.187:8000
+td_addr=120.24.228.187:8001
+username=demo
+password=demo
+strategy_id=strategy_1
+subscribe_symbols=SZSE.0000*
+mode=3
 ```
 
 
@@ -210,18 +205,16 @@ subscribe_symbols:
    
 	配置文件示例如下，假定平台服务运行于本地局域网中服务器192.168.1.16上，平台为策略分配的ID为03883f97-4d60-4843-bbc2-cc8752a04691。
 	
+	
 ```ini
-    [gm]
-    md_uri=tcp://211.154.152.181:5103       ## 使用实时行情服务
-    tr_uri=tcp://211.154.152.181:5050       ## 交易服务
-    query_uri=tcp://211.154.152.181:5104    ## 历史行情服务
-    #md_uri=file://<path>/data_file.tick     ## 使用本地行情数据文件
-    #md_uri=playback://211.154.152.181:5109  ## 使用回放行情服务	   
-    username=username
-	password=yourpassword
+	[strategy]
+	md_addr=120.24.228.187:8000
+	td_addr=192.168.1.16:8001
+	username=demo
+	password=demo
 	strategy_id=03883f97-4d60-4843-bbc2-cc8752a04691
-    subscribe_symbols=SHFE.cu1401.TICK,SHFE.cu1403.TICK
-    playback_start_time='2013-04-12 00:00:00'  ## 回放行情服务参数
-    playback_end_time='2013-12-12 00:00:00'    ## 回放行情服务参数
-    playback_speed=100                         ## 回放行情服务参数   
+	subscribe_symbols=SZSE.0000*
+	mode=3
+	start_time='2013-04-12 00:00:00'  ## 回放行情服务参数
+	end_time='2013-12-12 00:00:00'    ## 回放行情服务参数
 ```

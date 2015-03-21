@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: C/Cpp数据类型  
+title: C/C++ 数据类型  
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/cpp_types/
@@ -8,7 +8,7 @@ permalink: /docs/cpp_types/
 
 掘金量化策略SDK的主要数据类型
 
-## 基本数据结构(C语言)
+### 基本数据结构(C语言)
 
 - Tick数据
 
@@ -57,7 +57,7 @@ typedef struct Tick
 	    int            trade_type;            //(保留)交易类型,多开,多平等
         float          pre_close;             //昨收价
 }Tick;
-  	```
+```
 
 - Bar数据
 	
@@ -235,7 +235,7 @@ typedef struct Cash
 }Cash;
 ```
 
-## 其他辅助数据结构
+### 其他辅助数据结构
 
 -   OrderStatus  委托状态定义
     

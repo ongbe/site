@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 在挖金子网上展示量化策略  
+title: 挖金子网上查看  
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/work_with_wjz/
