@@ -677,6 +677,7 @@ def get_positions(self)
 响应Tick事件，收到Tick数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_tick(self, tick)
 ```
