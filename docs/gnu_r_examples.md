@@ -24,42 +24,41 @@ echo_data <- function(data) {
 # 加载gmsdk
 library(gmsdk)
 
-# 分别设置实时行情、交易和历史查询的服务地址
-live_uri = 'live://211.154.152.181:5103'
-trade_uri = 'tcp://211.154.152.181:5050'
-query_uri = 'tcp://211.154.152.181:5104'
+# 分别设置实时行情、交易的服务地址
+md_uri = '120.24.228.187:8000'
+td_uri = '120.24.228.187:8001'
 
 # 用户名、密码及代码
-username = 'a'
-password = 'a'
+username = 'demo'
+password = 'demo'
 strategy_id = 'strategy_1'
-symbols = 'CFFEX.IF1409.bar.15,CFFEX.IF1409.tick'
+symbols = 'CFFEX.IF1502.bar.15,CFFEX.IF1502.tick'
+mode=3
+
 # 回放相关参数，暂时不用
 playback_start_time = '2014-09-05 09:15:00'
 playback_end_time   = '2014-09-05 15:30:00'
-playback_speed = 100
 
-# 以下是三个服务的分别初始化
-#live_init(live_uri, username, password, strategy_id, symbols)
-#query_init(query_uri, username, password)
-#trade_init(trade_uri, username, password, strategy_id)
+# 以下是三个初始化方式
+# 单独初始化行情
+#md_init(mode, symbols)
+#td_init(strategy_id, td_uri)
+#strategy_init(trade_uri, username, password, strategy_id)
 
 # 一起初始化
-gm_init(live_uri,    
-		trade_uri,
-		query_uri,
+strategy_init(md_uri,    
+		td_uri,
 		username,
 		password,
 		strategy_id,
 		symbols,
+		mode,
 		playback_start_time,
-		playback_end_time,
-		playback_speed)
+		playback_end_time)
 
 # 设置行情数据的处理
 set_bar_handler(echo_data)
 set_tick_handler(echo_data)
-set_trade_handler(echo_data)
 
 # 设置交易数据的处理
 trade_set_execution_handler(echo_data)
@@ -79,15 +78,12 @@ on_bar <- function(bar) {
   print(bar)
   bar_count <- bar_count + 1
   if (bar_count %% interval == 0) {
-    trade_open_long('CFFEX.IF1409', 0.0, 1)
+    trade_open_long('CFFEX', 'IF1409', 0.0, 1)
   }
 }
 
 # 重新设置分时数据处理函数
 set_bar_handler(on_bar)
-
-# 启动服务
-gm_start()
 
 tryCatch({
   run()
@@ -95,7 +91,7 @@ tryCatch({
   cat(" -- an interrupt caught.\n");
   ##print(interrupt);
 }, finally = {
-  gm_stop();
+  logout();
   cat("gmsdk service stopped.\n");
 })
 

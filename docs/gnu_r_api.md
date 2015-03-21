@@ -52,7 +52,9 @@ gmsdk::subscribe        订阅，参数格式: 'CFFEX.IF1506.tick,SHFE.ag1506.ba
 gmsdk::unsubscribe      退订
 
 ##### 历史行情查询部分
+
 gmsdk::query_bars 按时间段查询分时行情数据，支持单个代码
+
 ```
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param bar_type  bar周期，以秒为单位，比如60表示1分钟bar
@@ -61,6 +63,7 @@ gmsdk::query_bars 按时间段查询分时行情数据，支持单个代码
 * @return bar数据列表
 ```
 gmsdk::query_last_bars 查询最近的分时数据，支持多个代码
+
 ```
 * @param symbols 多个证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
 * @param bar_type bar类型，以秒为单位, 如 60 表示1分钟分时K线
@@ -68,6 +71,7 @@ gmsdk::query_last_bars 查询最近的分时数据，支持多个代码
 ```
 
 gmsdk::query_last_n_bars 查询最近的分时数据，支持单个代码
+
 ```
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param bar_type bar类型，以秒为单位, 如 60 表示1分钟分时K线
