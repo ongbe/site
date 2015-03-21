@@ -12,7 +12,7 @@ permalink: /docs/work_with_wjz/
 3. 读取产品的唯一ID，并配置在您的量化策略程序中；
 
 ## 注册成专家用户
-登录挖金子网站（www.wajinzi.me），进入注册页面（http://www.wajinzi.me/register/?expert）,填写相关信息。
+登录[挖金子网站](www.wajinzi.me "挖金子")，进入[注册页面](http://www.wajinzi.me/register/?expert),填写相关信息。
 
 ![Image]({{site.baseurl}}/images/docs/wjz/register_expert.png)
 

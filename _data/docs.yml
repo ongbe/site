@@ -12,6 +12,8 @@
 - title: 策略开发：C/C++
   docs:
   - cpp_tut
+  - cpp_types
+  - cpp_api
   - cpp_examples
 
 - title: 策略开发：C#

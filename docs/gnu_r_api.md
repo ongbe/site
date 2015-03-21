@@ -5,6 +5,8 @@ prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/gnu_r_api/
 ---
+
+
 ![image](http://www.r-project.org/Rlogo.jpg)
 本节介绍R语言版gmsdk包的API接口，方便在R环境中完成实时行情订阅、历史数据提取、历史行情回放，交易。gm_前缀的函数汇集了其他类的功能接口，以便于策略的编写时完成灵活的调取数据、下单和接收执行回报等功能。
 另一方面，实时行情(live)、历史行情查询(query)和回放(playback)、交易(trade)四个部分功能都可以分别独立使用，比如单独使用实时行情接口，单独使用历史数据接口，单独回放历史行情，单独调用交易下单或查询接口等。
@@ -13,11 +15,9 @@ permalink: /docs/gnu_r_api/
 
 为方便策略开发和测试，以下服务在公网开放访问。真实交易时将配置切换到自己的服务地址即可，代码不用作任何修改，开发、测试和生产3个环境可以无缝迁移。地址如有变更，请查询官网通知: http://www.myquant.cn
 
-```
-实时行情服务: tcp://211.154.152.181:5103
-模拟行情服务: tcp://211.154.152.181:5106
-数据查询服务: tcp://211.154.152.181:5104
-模拟交易服务: tcp://211.154.152.181:5050
+```ini
+行情服务连接字符串： md_addr=120.24.228.187:8000
+交易服务连接字符串： td_addr=120.24.228.187:8001
 ```
 
 #### R语言扩展包gmsdk
@@ -33,74 +33,192 @@ permalink: /docs/gnu_r_api/
 以下是gmsdk包的完整接口：
 
 ```
-# SDK服务初始化、启动、停止
-gmsdk::gm_init,  掘金服务初始化     
-gmsdk::gm_start, 启动
-gmsdk::gm_stop,  停止 
+# SDK服务的登录、登出
+gmsdk::login  掘金服务登录     
 
-# 实时行情部分
-gmsdk::live_init, 实时行情初始化
-gmsdk::live_close, 断开实时行情
-gmsdk::live_reconnect, 重连实时行情
-gmsdk::live_subscribe, 订阅交易品种的行情
-gmsdk::live_unsubscribe, 取消订阅品种的行情
+```
+    * @param addr       掘金数据服务器地址, <机器名/IP>:<端口号>格式，如 211.154.152.181:5103
+    * @param username   掘金账号
+    * @param password   掘金密码
+```
 
-# 行情回放部分
-gmsdk::playback_init, 回放初始化
-gmsdk::playback_start, 开始回放
-gmsdk::playback_stop,  停止回放
+gmsdk::logout  登出
+
+# 行情初始化方法
+gmsdk::md_init 行情初始化方法，新版行情接口进行了简化，通过mode来区分实时、模拟、回放和查询模式
+
+# 订阅和退订
+gmsdk::subscribe        订阅，参数格式: 'CFFEX.IF1506.tick,SHFE.ag1506.bar.60'
+gmsdk::unsubscribe      退订
 
 # 历史行情查询部分
-gmsdk::query_init, 查询初始化
-gmsdk::query_bars, 按时间段查询分时行情数据
-gmsdk::query_last_bars, 查询最近的分时数据
+gmsdk::query_bars 按时间段查询分时行情数据，支持单个代码
+```
+* @param symbol 证券代码, 如CFFEX.IF1308
+* @param bar_type  bar周期，以秒为单位，比如60表示1分钟bar
+* @param begin_time 开始时间, 如2013-8-14 00:00:00
+* @param end_time 结束时间, 如2013-8-15 00:00:00
+* @return bar数据列表
+```
+gmsdk::query_last_bars 查询最近的分时数据，支持多个代码
+```
+* @param symbols 多个证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
+* @param bar_type bar类型，以秒为单位, 如 60 表示1分钟分时K线
+* @return Bar数据列表
+```
 
-gmsdk::query_ticks, 按时间段查询逐笔行情
-gmsdk::query_last_ticks, 查询最近的逐笔行情
-gmsdk::query_timepoint_tick, 查询时间点的逐笔行情
+gmsdk::query_last_n_bars 查询最近的分时数据，支持单个代码
+```
+* @param symbol 证券代码, 如CFFEX.IF1308
+* @param bar_type bar类型，以秒为单位, 如 60 表示1分钟分时K线
+* @param n 数据个数
+* @return Bar数据列表
+```
+gmsdk::query_ticks 按时间段查询逐笔行情
+```
+* @param symbol 证券代码, 如CFFEX.IF1308
+* @param begin_time 开始时间, 如2013-8-14 00:00:00
+* @param end_time 结束时间, 如2013-8-15 00:00:00
+* @return tick数据列表
+```
+gmsdk::query_last_ticks 查询最近的逐笔行情
+```
+* @param symbol_list 多个证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
+* @return tick数据列表
+```
 
-gmsdk::query_trades, 按时间段查询逐笔成交
+gmsdk::query_last_n_ticks 查询最近的逐笔行情
+```
+* @param symbol 证券代码, 如CFFEX.IF1308
+* @param n 数据个数
+* @return tick数据列表
+```
 
 gmsdk::query_daily_bars，按时间段查询日线数据
-gmsdk::query_last_daily_bars, 查询最近日线数据
+```
+* @param symbol 证券代码, 如CFFEX.IF1308
+* @param begin_time 开始时间, 如2013-8-14 00:00:00
+* @param end_time 结束时间, 如2013-8-15 00:00:00
+* @return DailyBar数据列表
+```
+
+gmsdk::query_last_daily_bars 查询最近日线数据
+```
+* @param symbol_list 证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
+* @return DailyBar数据列表
+```
+
+gmsdk::query_last_daily_bars 查询最近日线数据
+```
+* @param symbol 证券代码, 如CFFEX.IF1308
+* @param n 数据个数
+* @return DailyBar数据列表
+```
 
 # 行情部分事件响应处理的关联函数
-gmsdk::set_bar_handler,  设置分时数据响应处理函数
-gmsdk::set_tick_handler, 设置tick逐笔行情响应处理函数
-gmsdk::set_trade_handler, 设置逐笔成交响应处理函数
+gmsdk::set_bar_handler  设置分时数据响应处理函数
 
-gmsdk::set_live_error_handler, 设置行情错误处理函数
+```
+    回调函数模板，  
+    on_bar <- function(bar) {
+        //handle the bar 
+    }
+```
+gmsdk::set_tick_handler 设置tick逐笔行情响应处理函数
+```
+    回调函数模板，  
+    on_tick <- function(tick) {
+        //handle the tick 
+    }
+```
+
+gmsdk::set_live_error_handler 设置行情错误处理函数
+```
+    回调函数模板，  
+    on_md_error <- function(error, msg) {
+        //handle the error info 
+    }
+```
 
 # 交易部分
-gmsdk::trade_init, 交易初始化
-gmsdk::trade_close, 退出交易
-gmsdk::trade_reconnect, 重新连接交易通道
+gmsdk::trade_init 交易初始化
+```
+* @param strategy_id 策略ID
+* @param addr        交易服务器地址, 格式<host name/ip>:<port num>
+```
+gmsdk::trade_reconnect 重新连接交易通道
 
 ## 交易下单、撤单
-gmsdk::trade_open_long,   开多单
-gmsdk::trade_open_short,  开空单
-gmsdk::trade_close_long,  平多单
-gmsdk::trade_close_short, 平空单
-gmsdk::trade_cancel_order,撤单
+gmsdk::trade_open_long      开多单
+```
+    * @param exchange 交易所代码
+    * @param sec_id 证券代码
+    * @param price  价格：price==0为市价单，否则为限价单
+    * @param volume 数量
+    * @return order 返回委托请求的Order对象
+```
+
+gmsdk::trade_open_short     开空单
+```
+    * @param exchange 交易所代码
+    * @param sec_id 证券代码
+    * @param price  价格：price==0为市价单，否则为限价单
+    * @param volume 数量
+    * @return order 返回委托请求的Order对象
+```
+gmsdk::trade_close_long     平多单
+```
+    * @param exchange 交易所代码
+    * @param sec_id 证券代码
+    * @param price  价格：price==0为市价单，否则为限价单
+    * @param volume 数量
+    * @return order 返回委托请求的Order对象
+```
+gmsdk::trade_close_short    平空单
+```
+    * @param exchange 交易所代码
+    * @param sec_id 证券代码
+    * @param price  价格：price==0为市价单，否则为限价单
+    * @param volume 数量
+    * @return order 返回委托请求的Order对象
+```
+gmsdk::trade_cancel_order   撤单
+```
+    *@param cl_ord_id 客户端委托ID，委托的唯一识别符（client order id)
+```
 
 ## 交易帐户查询
-gmsdk::trade_list_positions, 查询所有持仓
-gmsdk::trade_query_specified_position， 查询指定代码和方向的持仓
-gmsdk::trade_query_cash， 查询帐户资金情况
-gmsdk::trade_query_order，查询订单
+gmsdk::trade_list_positions 查询所有持仓
+gmsdk::trade_query_specified_position 查询指定代码和方向的持仓
+gmsdk::trade_query_cash 查询帐户资金情况
+gmsdk::trade_query_order查询订单
 
 ## 设置交易事件的响应函数
-gmsdk::trade_set_execution_handler, 设置成交回报响应的处理函数
-gmsdk::trade_set_order_cancel_rejected_handler, 设置撤单失败的响应处理
-gmsdk::trade_set_order_new_handler, 设置委托被接受的处理
-gmsdk::trade_set_order_rejected_handler, 设置委托被拒绝的处理
-gmsdk::trade_set_order_partially_filled_handler, 设置委托部分成交的处理
-gmsdk::trade_set_order_filled_handler, 设置委托订单完全成交的处理
-gmsdk::trade_set_order_stopped_handler, 设置委托停止交易的处理
-gmsdk::trade_set_trade_error_handler, 设置交易错误的响应处理
+gmsdk::trade_set_execution_handler 设置成交回报响应的处理函数
+gmsdk::trade_set_order_cancel_rejected_handler 设置撤单失败的响应处理
+gmsdk::trade_set_order_new_handler 设置委托被接受的处理
+gmsdk::trade_set_order_rejected_handler 设置委托被拒绝的处理
+gmsdk::trade_set_order_partially_filled_handler 设置委托部分成交的处理
+gmsdk::trade_set_order_filled_handler 设置委托订单完全成交的处理
+gmsdk::trade_set_order_stopped_handler 设置委托停止交易的处理
+gmsdk::trade_set_trade_error_handler 设置交易错误的响应处理
+
+# 策略初始化
+gmsdk::strategy_init  初始化策略，同时初始化策略需要的行情和交易接口，输入参数如下：
+
+```
+*md_addr        行情服务uri, 比如 120.24.228.187:8000
+*td_addr        交易服务uri, 比如 120.24.228.187:8001
+*username       掘金账号
+*password       掘金密码
+*strategy_id    策略ID
+*subscribe_symbols 行情订阅的代码列表
+*start_time     回放开始时间
+*end_time       回放结束时间
+```
 
 # 策略启动
-gmsdk::run，在相关事件响应函数都设置完成后，用run函数来启动策略，
+gmsdk::run在相关事件响应函数都设置完成后，用run函数来启动策略，
 
 # 版本查询
 gmsdk::version
