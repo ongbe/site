@@ -6,7 +6,7 @@ next_section: manual-deployment
 permalink: /docs/work_with_wjz/
 ---
 
-在挖金子网（:link）上展示您的量化策略，只需要三步：
+在挖金子网（[link](www.wajinzi.me "挖金子")）上展示您的量化策略，只需要三步：
 1. 注册成为专家用户；
 2. 创建一个量化产品；
 3. 读取产品的唯一ID，并配置在您的量化策略程序中；
@@ -14,22 +14,22 @@ permalink: /docs/work_with_wjz/
 ## 注册成专家用户
 登录[挖金子网站](www.wajinzi.me "挖金子")，进入[注册页面](http://www.wajinzi.me/register/?expert),填写相关信息。
 
-![Image]({{site.baseurl}}/images/docs/wjz/register_expert.png =512x)
+![Image]({{site.baseurl}}/images/docs/wjz/register_expert.png)
 
 ## 创建量化产品
 
 进入“我的产品”页面，如下图：
 
-![Image]({{site.baseurl}}/images/docs/wjz/create_prod1.png =640x)
+![Image]({{site.baseurl}}/images/docs/wjz/create_prod1.png)
 
 点击左上侧的“＋”或者移动鼠标到空白产品上，然后点击“创建产品”。
 如下图所示，填写必要的产品信息：
 
-![Image]({{site.baseurl}}/images/docs/wjz/create_prod2.png =640x)
+![Image]({{site.baseurl}}/images/docs/wjz/create_prod2.png)
 
 保存成功后，会有如下提示：
 
-![Image]({{site.baseurl}}/images/docs/wjz/create_success.png =640x)
+![Image]({{site.baseurl}}/images/docs/wjz/create_success.png)
 
 恭喜您！ 产品已经成功创建。
 
@@ -39,7 +39,7 @@ permalink: /docs/work_with_wjz/
 如图：
 
 编辑产品页面
-![Image]({{site.baseurl}}/images/docs/wjz/edit_prod.png =640x)
+![Image]({{site.baseurl}}/images/docs/wjz/edit_prod.png)
 
 注意第二行，产品ID，这一项是只读的，移动下鼠标到这个框，双击鼠标按键，或者按“ctrl + A"，*确保选中全部内容*。 鼠标右键菜单或“ctrl + c”复制下来，粘贴到您的量化策略程序或配置文档中‘strategy_id=’后面，大概是这样子：
 
