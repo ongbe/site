@@ -193,11 +193,13 @@ strategy = MyStrategy(config_file="strategy_simple.ini")
 运行策略，直到用户关闭策略，或策略内部调用`stop`函数。
 
 函数原型：
+
 ```python
 run()
 ```
 
 参数说明及返回值说明：
+
 ```
 * @return 0：成功, 其他： error code(注：参见SDK错误代码定义文档，或头文件gm_error_code.h) 
 ```
@@ -206,11 +208,13 @@ run()
 
 
 函数原型：
+
 ```python
 stop()
 ```
 
 参数说明及返回值说明：
+
 ```
 无
 ```
@@ -291,6 +295,7 @@ unsubscribe(symbol_list);
              end_time='',            #  回放结束时间
              )
 ```
+
 其中mode表示行情服务模式，可选项有如下几个：
 
 ```
@@ -299,6 +304,7 @@ unsubscribe(symbol_list);
             MD_MODE_SIMULATED  = 3,  // 接收模拟行情
             MD_MODE_PLAYBACK   = 4   // 接收回放行情
 ```
+
 当mode为1，也就是查询模式时，后面三个参数subscribe_symbols, start_time, end_time不用给定。
 仅当mode为回放模式时，才需要给定start_time, end_time参数。
 
@@ -308,13 +314,14 @@ unsubscribe(symbol_list);
 提取指定时间段的历史Tick数据，支持单个代码提取或多个代码组合提取。
 
 函数原型：
+
 ```python
 def get_ticks(self, symbol, begin_time, end_time)
 ```
 
 参数说明及返回值说明：
+
 ```
-* 提取期货Tick
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param begin_time 开始时间, 如2013-8-14 00:00:00
 * @param end_time 结束时间, 如2013-8-15 00:00:00
@@ -326,13 +333,14 @@ def get_ticks(self, symbol, begin_time, end_time)
 提取指定时间段的历史Bar数据，支持单个代码提取或多个代码组合提取。
 
 函数原型：
+
 ```python
 def get_bars(self, symbol, bar_type, begin_time, end_time)
 ```
 
 参数说明及返回值说明：
+
 ```
-* 提取期货Bar
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param bar_type  bar周期，以秒为单位，比如60等与1分钟bar
 * @param begin_time 开始时间, 如2013-8-14 00:00:00
@@ -340,18 +348,19 @@ def get_bars(self, symbol, bar_type, begin_time, end_time)
 * @return bar数据列表
 ```
 
-- **get_dailybars函数**
+- **get_daily_bars函数**
 
 提取指定时间段的历史日周期Bar数据，支持单个代码提取。DailyBar比Bar多了部分静态数据，如结算价，涨跌停等。
 
 函数原型：
+
 ```python
-def get_dailybars(self, symbol, begin_time, end_time)
+def get_daily_bars(self, symbol, begin_time, end_time)
 ```
 
 参数说明及返回值说明：
+
 ```
-* 提取期货DailyBar
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param begin_time 开始时间, 如2013-8-14 00:00:00
 * @param end_time 结束时间, 如2013-8-15 00:00:00
@@ -372,7 +381,6 @@ def get_last_ticks(self, symbols)
 参数说明及返回值说明：
 
 ```
-* 提取期货快照, 即最新的Tick
 * @param symbol_list 多个证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
 * @param n 数据个数, 当n > 1 时, 只取第一只代码的数据
 * @return tick数据列表
@@ -389,27 +397,26 @@ def get_last_bars(self, symbols, bar_type)
 ```
 
 参数说明及返回值说明：
+
 ```
-* 提取期货快照, 即最新的Bar
 * @param symbols 多个证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
 * @return Bar数据列表
 ```
 
-- **get_last_dailybars函数**
+- **get_last_daily_bars函数**
 
 提取最新1条DailyBar数据，支持单个代码提取或多个代码组合提取, 只能提取每个代码最新的1条数据。
 
 函数原型：
 
 ```python
-def get_last_dailybars(self, symbols)
+def get_last_daily_bars(self, symbols)
 ```
 
 参数说明及返回值说明：
 
 ```
-* 提取期货快照, 即最新的Bar
-* @param symbol_list 证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
+* @param symbols 证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
 * @return DailyBar数据列表
 ```
 
@@ -420,13 +427,12 @@ def get_last_dailybars(self, symbols)
 函数原型：
 
 ```python
-def get_last_ticks(self, symbols)
+def get_last_ticks(self, symbol)
 ```
 
 参数说明及返回值说明：
 
 ```
-* 提取期货快照, 即最新的Tick
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param n 数据个数
 * @return tick数据列表
@@ -445,26 +451,24 @@ def get_last_n_bars(self, symbol, bar_type)
 参数说明及返回值说明：
 
 ```
-* 提取期货快照, 即最新的Bar
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param n 数据个数
 * @return Bar数据列表
 ```
 
-- **get_last_n_dailybars函数**
+- **get_last_n_daily_bars函数**
 
 提取单个代码的最新n条DailyBar数据。
 
 函数原型：
 
 ```python
-def get_last_n_dailybars(self, symbol)
+def get_last_n_daily_bars(self, symbol)
 ```
 
 参数说明及返回值说明：
 
 ```
-* 提取期货快照, 即最新的Bar
 * @param symbol 证券代码, 如CFFEX.IF1308
 * @param n 数据个数
 * @return DailyBar数据列表
@@ -509,7 +513,6 @@ def open_short(self, exchange, sec_id, price, volume)
 参数说明及返回值说明：
 
 ```
-* 开空仓
 * @param exchange 交易所代码
 * @param sec_id   证券代码
 * @param price  委托价，如果price=0,为市价单，否则为限价单。
@@ -530,7 +533,6 @@ def close_long(self, exchange, sec_id, price, volume)
 参数说明及返回值说明：
 
 ```
-* 平多仓
 * @param exchange 交易所代码
 * @param sec_id   证券代码
 * @param price  委托价，如果price=0,为市价单，否则为限价单。
@@ -552,14 +554,12 @@ def close_short(self, exchange, sec_id, price, volume)
 参数说明及返回值说明：
 
 ```
-* 平空仓
 * @param exchange 交易所代码
 * @param sec_id   证券代码
 * @param price  委托价，如果price=0,为市价单，否则为限价单。
 * @param volume 委托量
 * @return Order 委托下单生成的Order对象
 ```
-
 
 - **place_order函数**
 
@@ -575,7 +575,6 @@ def place_order(self, order)
 参数说明及返回值说明：
 
 ```
-* 委托下单
 * @param order  委托Order对象
 * @return Order 直接返回参数order对象
 ```
@@ -593,7 +592,6 @@ def cancel_order(self, cl_ord_id)
 参数说明及返回值说明：
 
 ```
-* 撤单
 * @param cl_ord_id  委托Order的客户端订单ID
 * @return 返回0，执行成功，否则返回错误码。
 *         cancel_order是异步请求，执行的结果由on_execution, on_order_cancelled, on_order_cancel_rejected回调返回。
@@ -612,7 +610,6 @@ def get_order(self, cl_ord_id)
 参数说明及返回值说明：
 
 ```
-* 查单
 * @param cl_ord_id  委托Order的客户端订单ID
 * @return Order 查询到的order对象或null.
 ```
@@ -631,7 +628,6 @@ def get_cash(self)
 参数说明及返回值说明：
 
 ```
-* 查单
 * @return Cash 当前策略的资金信息。
 ```
 
@@ -647,8 +643,8 @@ def get_position(self, exchange, sec_id, side)
 ```
 
 参数说明及返回值说明：
+
 ```
-* 查持仓
 * @param exchange 交易所代码
 * @param sec_id   证券代码
 * @param side   买卖方向
@@ -666,6 +662,7 @@ def get_positions(self)
 ```
 
 参数说明及返回值说明：
+
 ```
 * 查当前策略全部持仓
 * @return 当前策略全部持仓列表。
@@ -694,11 +691,13 @@ def on_tick(self, tick)
 响应Bar事件，收到Bar数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_bar(self, bar)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param bar Bar数据
 ```
@@ -712,11 +711,13 @@ def on_bar(self, bar)
 响应委托执行回报事件，收到成交回报 `ExecRpt` 数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_execrpt(self, execrpt)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param execrpt ExecRpt数据
 ```
@@ -726,11 +727,13 @@ def on_execrpt(self, execrpt)
 响应订单`被拒绝`事件，收到Order变更数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_order_rejected(self, order)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param order 最新的Order状态
 ```
@@ -740,11 +743,13 @@ def on_order_rejected(self, order)
 响应订单`被交易所接受`事件，收到Order变更数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_order_new(self, order)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param order 最新的Order状态
 ```
@@ -754,11 +759,13 @@ def on_order_new(self, order)
 响应订单`完全成交`事件，收到Order变更数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_order_filled(self, order)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param order 最新的Order状态
 ```
@@ -768,11 +775,13 @@ def on_order_filled(self, order)
 响应订单`部分成交`事件，收到Order变更数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_order_partially_filled(self, order)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param order 最新的Order状态
 ```
@@ -782,11 +791,13 @@ def on_order_partially_filled(self, order)
 响应订单`停止执行`事件，比如，限价单到收市仍然未能成交。收到Order变更数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_order_stop_executed(self, order)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param order 最新的Order状态
 ```
@@ -796,11 +807,13 @@ def on_order_stop_executed(self, order)
 响应订单`撤单成功`事件，收到Order变更数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_order_cancelled(self, order)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param order 最新的Order状态
 ```
@@ -810,11 +823,13 @@ def on_order_cancelled(self, order)
 响应订单`撤单请求被拒绝`事件，收到ExecRpt数据后本函数被调用。`ExecRpt.ord_rej_reason`说明为什么撤单失败。
 
 函数原型：
+
 ```python
 def on_order_cancel_rejected(self, execrpt)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param execrpt 撤单失败的执行回报。
 ```
@@ -826,11 +841,13 @@ def on_order_cancel_rejected(self, execrpt)
 响应`错误`事件，策略内部出现错误时，比如行情或交易连接断开，数据错误，超时等，将触发本函数。
 
 函数原型：
+
 ```python
 def on_error(int error_code)
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param error_code 错误编码，参考 gmsdk.error 中的定义。
 ```
@@ -841,11 +858,13 @@ def on_error(int error_code)
 响应`行情状态`事件，收到MarketDataEvent数据后本函数被调用。
 
 函数原型：
+
 ```python
 def on_md_event(self, event):
 ```
 
 参数说明及返回值说明：
+
 ```
 * @param md_event 开盘，收盘，回放行情结束等。
 ```
