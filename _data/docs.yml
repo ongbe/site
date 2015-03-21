@@ -4,10 +4,13 @@
   - quickstart
   - gmsdk_intro
 
+- title: 策略展示平台
+  docs:
+  - work_with_wjz
+
 - title: 策略终端
   docs:
   - terminal
-  - work_with_wjz
 
 - title: 策略开发：C/C++
   docs:
@@ -35,6 +38,7 @@
   - gnu_r_tut
   - gnu_r_api
   - gnu_r_examples
+
 
 - title: 常见问题解答(FAQ)
   docs:
