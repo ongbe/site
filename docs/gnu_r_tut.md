@@ -22,7 +22,7 @@ $ ./configure
 $ make
 ```
 
-另外，现在常用的linuxn发行版本，如debian,CentOS等都有直接可用的二进制安装包。
+另外，现在常用的linux发行版本，如debian,CentOS等都有直接可用的二进制安装包。
 比如，在debian下，用包管理器可以查到相关的R扩展工具包：
 
 ```
@@ -82,9 +82,9 @@ Windows环境下，通常可以把解压的gmsdk.dll直接放在R安装目录下
 使用我们提供的互联网上演示服务，测试下历史数据的查询：
 
 ```
-> query_uri = "tcp://211.154.152.181:5104"
+> md_addr = "120.24.228.187:8000"
 
-> gmsdk::query_init(query_uri, username, password)
+> gmsdk::login(md_addr, username, password)
 [1] "成功"
 
 > gmsdk::query_bars('CFFEX.IF1409', 300, '2014-09-09 09:15:00', '2014-09-09 09:30:00')
