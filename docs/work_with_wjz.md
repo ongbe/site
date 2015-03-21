@@ -14,10 +14,19 @@ permalink: /docs/work_with_wjz/
 ## 注册成专家用户
 登录挖金子网站（www.wajinzi.me），进入注册页面（http://www.wajinzi.me/register/?expert）,填写相关信息。
 
+![Image](images/register.png)
+
 ## 创建量化产品
+
+进入“我的产品”页面，点击创建产品。
+
+![Image](images/create_prod.png)
+
 
 ## 获得产品ID
 
 点击“我的产品”页面上对应产品图标下的“编辑”按钮，可以看到产品的ID.
 如图：
-编辑产品页面（image）
+编辑产品页面
+
+![Image](images/edit_prod.png)
