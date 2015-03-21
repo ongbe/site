@@ -118,7 +118,7 @@ void on_event(MDEvent *event)
     if (event->event_type == 3)
     {
         printf("finished playback\n");
-        gm_future_stop();
+        gm_stop();
     }
 }
 
@@ -173,7 +173,7 @@ strategy_id：
 
 subscribe_symbols:
 
-向行情源服务订阅的代码，格式同SDK行情订阅函数gm_md_future_subscribe中的参数格式一样，多个代码间用`,`分隔。示例中订阅了上期所的cu1401,cu1403两个品种的tick数据。
+向行情源服务订阅的代码，格式同SDK行情订阅函数gm_md_subscribe中的参数格式一样，多个代码间用`,`分隔。示例中订阅了上期所的cu1401,cu1403两个品种的tick数据。
 
 配置文件示例：
 
