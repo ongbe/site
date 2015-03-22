@@ -129,6 +129,7 @@ gmsdk::set_bar_handler  设置分时数据响应处理函数
     }
 ```
 gmsdk::set_tick_handler 设置tick逐笔行情响应处理函数
+
 ```
     回调函数模板，  
     on_tick <- function(tick) {
@@ -137,6 +138,7 @@ gmsdk::set_tick_handler 设置tick逐笔行情响应处理函数
 ```
 
 gmsdk::set_live_error_handler 设置行情错误处理函数
+
 ```
     回调函数模板，  
     on_md_error <- function(error, msg) {
@@ -146,14 +148,17 @@ gmsdk::set_live_error_handler 设置行情错误处理函数
 
 ##### 交易部分
 gmsdk::trade_init 交易初始化
+
 ```
 * @param strategy_id 策略ID
 * @param addr        交易服务器地址, 格式<host name/ip>:<port num>
 ```
+
 gmsdk::trade_reconnect 重新连接交易通道
 
 ###### 交易下单、撤单
 gmsdk::trade_open_long      开多单
+
 ```
     * @param exchange 交易所代码
     * @param sec_id 证券代码
@@ -163,6 +168,7 @@ gmsdk::trade_open_long      开多单
 ```
 
 gmsdk::trade_open_short     开空单
+
 ```
     * @param exchange 交易所代码
     * @param sec_id 证券代码
@@ -170,7 +176,9 @@ gmsdk::trade_open_short     开空单
     * @param volume 数量
     * @return order 返回委托请求的Order对象
 ```
+
 gmsdk::trade_close_long     平多单
+
 ```
     * @param exchange 交易所代码
     * @param sec_id 证券代码
@@ -178,7 +186,9 @@ gmsdk::trade_close_long     平多单
     * @param volume 数量
     * @return order 返回委托请求的Order对象
 ```
+
 gmsdk::trade_close_short    平空单
+
 ```
     * @param exchange 交易所代码
     * @param sec_id 证券代码
@@ -187,6 +197,7 @@ gmsdk::trade_close_short    平空单
     * @return order 返回委托请求的Order对象
 ```
 gmsdk::trade_cancel_order   撤单
+
 ```
     *@param cl_ord_id 客户端委托ID，委托的唯一识别符（client order id)
 ```
