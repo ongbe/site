@@ -108,16 +108,16 @@ if __name__ == '__main__':
 ```
 
 推荐使用配置文件方式, 例如，以下是行情回放情况下的配置文件test_strategy.ini的内容示例, 相对实时行情而言，
-更换了md_addr,增加了回放需要的几个参数，回放开始时间，结束时间，回放速度:
+更换了md_addr,增加了回放需要的几个参数，回放开始时间，结束时间:
 
 ```
-        md_addr='120.24.228.187:8000'
-        td_addr='120.24.228.187:8001'
-        username='your username'
-        password='your password'
-        strategy_id='your strategy_id'
-        subscribe_symbols=CFFEX.IF1406.tick,CFFEX.IF1406.bar.60
-        mode=3
-        start_time=2014-08-11 00:00:00
-        end_time=2014-08-12 00:00:00
+    md_addr='120.24.228.187:8000'
+    td_addr='120.24.228.187:8001'
+    username='your username'
+    password='your password'
+    strategy_id='your strategy_id'
+    subscribe_symbols=CFFEX.IF1406.tick,CFFEX.IF1406.bar.60
+    mode=3
+    start_time=2014-08-11 00:00:00
+    end_time=2014-08-12 00:00:00
 ```
