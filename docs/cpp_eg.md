@@ -45,71 +45,69 @@ void on_tick(Tick *tick)
     Order o;
     char symbol[32];
     if(g_count % 100 == 0)
-	    {       
+    {       
         sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
     
         ret = gm_td_open_long(tick->exchange, tick->sec_id, tick->last_price, 3, &o);
         if(ret == 0)
-	        {
+        {
             printf("开多: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
-            o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
-	        }
+            o.cl_ord_id, o.strategy_id, symbol, o.price, o.volume);
+        }
         else
                printf("Error code = %d \n", ret);
-	    }
+    }
     else if(g_count % 75 == 0)
-	    {       
+    {       
         sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
     
         ret = gm_td_open_short(tick->exchange, tick->sec_id, tick->last_price, 4, &o);
         if(ret == 0)
-	        {
-               printf("开空: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
-               o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
-	        }
+        {
+           printf("开空: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
+           o.cl_ord_id, o.strategy_id, symbol, o.price, o.volume);
+        }
         else
-               printf("Error code = %d \n", ret);
-	    }
+           printf("Error code = %d \n", ret);
+    }
     else if(g_count % 50 == 0)
-	    {       
+    {       
         sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
     
         ret = gm_td_close_long(tick->exchange, tick->sec_id, tick->last_price, 3, &o);
         if(ret == 0)
-	        {
-              printf("平多: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
-              o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
-	        }
+        {
+            printf("平多: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
+            o.cl_ord_id, o.strategy_id, symbol, o.price, o.volume);
+        }
         else
-              printf("Error code = %d \n", ret);
+            printf("Error code = %d \n", ret);
         
-	    }
+    }
     else if(g_count % 25 == 0)
-	    {       
-        sprintf(symbol, "%s.%s\0", tick->exchange, tick->sec_id);
-    
+    {           
         ret = gm_td_close_short(tick->exchange, tick->sec_id, tick->last_price, 4, &o);
         if(ret == 0)
-	        {
-              printf("平空: %s , strategy: %s, symbol: %s price %.2f volume %d \n", 
-              o.cl_ord_id, o.strategy_id, o.symbol, o.price, o.volume);
-	        }
+        {
+            printf("平空: %s , strategy: %s, symbol: %s.%s price %.2f volume %d \n", 
+            o.cl_ord_id, o.strategy_id, o.exchange, o.sec_id, o.price, o.volume);
+        }
         else
-              printf("Error code = %d \n", ret);
-	    }
-	}
+            printf("Error code = %d \n", ret);
+    }
+}
 
 //处理分时行情事件
 void on_bar(Bar *bar)
 {
-    printf("Bar symbol= %s open = %.2f close = %.2f \n", bar->sec_id, bar->open, bar->close);
+    printf("Bar symbol= %s.%s open = %.2f close = %.2f \n", bar->exchange, bar->sec_id, bar->open, bar->close);
 }
 
 //处理委托回报事件
 void on_execution(ExecRpt *res)
 {
-   printf("成交回报: strategy: %s, symbol: %s price %.2f volume %d \n", 
-   res->strategy_id, res->symbol, res->price, res->volume);
+   printf("成交回报: strategy: %s, symbol: %s.%s price %.2f volume %d \n", 
+   res->strategy_id, res->exchange, res->sec_id, res->price, res->volume);
 }
 
 //如果是回放行情，行情文件播放完毕时退出策略
@@ -127,14 +125,14 @@ int main(int argc, char *[])
     int ret;
 
     //初始化策略,根据参数
-	    /*
+    /*
     ret = strategy_init(
         "120.24.228.187:8000",
         "120.24.228.187:8001",
         "username","password",
         "strategy_1",
         "CFFEX.IF1403.*");
-	    */
+    */
 
     //初始化策略,根据配置文件
     ret = strategy_init_with_config("test_strategy.ini");
@@ -143,10 +141,10 @@ int main(int argc, char *[])
     printf("init return: %s \n", gm_strerror(ret));
 
     if(ret )
-	    {
+    {
         system("pause");
         return ret;
-	    }
+    }
 
     // 设置事件回调函数
     gm_td_set_execrpt_callback(on_execution);
@@ -180,6 +178,7 @@ subscribe_symbols:
 ```ini
 [strategy]
 md_addr=120.24.228.187:8000
+;td_addr=192.168.1.102:8001
 td_addr=120.24.228.187:8001
 username=demo
 password=demo
