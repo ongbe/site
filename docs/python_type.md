@@ -28,6 +28,8 @@ ERR_AUTH_LOGIN                           = 1004  # "无法登录掘金认证服�
 ERR_REQUEST_TIMEOUT                      = 1005  # "请求超时"
 ERR_INVALID_PARAMETER                    = 1006  # "非法参数"
 ERR_STRATEGY_INIT                        = 1007  # "策略未初始化"
+ERR_INTERNAL_INIT_ERROR                  = 1008  # "SDK内部初始化错误"
+ERR_API_SERVER_CONNECT                   = 1009  # "无法连接掘金服务"
 
 # 业务层面错误码 共有部分， 1500～1999
 
