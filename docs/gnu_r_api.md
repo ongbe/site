@@ -114,6 +114,7 @@ gmsdk::md_init 行情初始化方法，新版行情接口进行了简化，通�
 ```
 
 `gmsdk::query_last_daily_bars` 查询最近日线数据
+
 ```
 * @param symbol_list 证券代码列表, 如 'CFFEX.IF1308,CFFEX.1401,SHFE.AG1311'
 * @return DailyBar数据列表
