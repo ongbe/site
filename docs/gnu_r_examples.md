@@ -39,13 +39,14 @@ mode=3
 playback_start_time = '2014-09-05 09:15:00'
 playback_end_time   = '2014-09-05 15:30:00'
 
-# 以下是三个初始化方式
-# 单独初始化行情
-#md_init(mode, symbols)
-#td_init(strategy_id, td_uri)
-#strategy_init(trade_uri, username, password, strategy_id)
+# 以下是三种初始化方式
+# 初始化行情
+#md_init(mode = 1L, symbols = "", start_time = "", end_time = "")
 
-# 一起初始化
+# 初始化交易
+#trade_init(strategy_id, trade_uri = "") 
+
+# 初始化策略，行情和交易一起初始化
 strategy_init(md_uri,    
 		td_uri,
 		username,
