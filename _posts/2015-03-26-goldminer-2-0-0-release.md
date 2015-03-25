@@ -25,19 +25,19 @@ categories: [release]
 
 1. **统一了行情服务接口**，一套接口接入各大市场的行情数据，完全屏蔽了各交易所接入方式的差异。支持跨交易所行情混合订阅，比如:
 
-    *单独订阅期货行情*
+    单独订阅期货行情
 
     ```
     subscribe_symbols=CFFEX.IF1506.tick,CFFEX.IF1506.bar.60
     ```
 
-    *混合订阅期货行情+股票行情*
+    混合订阅期货行情+股票行情
 
     ```
     subscribe_symbols=SZSE.000001.tick,CFFEX.IF1506.tick,CFFEX.IF1506.bar.60
     ```
 
-    *混合订阅期货行情+股票行情+期权行情*
+    混合订阅期货行情+股票行情+期权行情
 
     ```
     subscribe_symbols=SHSE.10000001.tick,SZSE.000001.tick,CFFEX.IF1506.tick,CFFEX.IF1506.bar.60

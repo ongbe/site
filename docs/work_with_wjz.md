@@ -1,19 +1,19 @@
 ---
 layout: docs
-title: 挖金子网上试用  
+title: 挖金子网上试用量化云及策略sdk的步骤
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/work_with_wjz/
 ---
 
-在挖金子网（[link](http://www.wajinzi.me/)）上试用您的量化策略，只需要三步：
+在[挖金子网](http://www.wajinzi.me/)）上试用您的量化策略，只需要三步：
 
 1. 注册成为专家用户；
 2. 创建一个量化产品；
-3. 读取产品的唯一ID，并配置在您的量化策略程序中；
+3. 读取产品ID，并配置在您的量化策略程序中；
 
 ### 注册成专家用户
-登录[挖金子网站](http://www.wajinzi.me/)，进入[注册页面](http://www.wajinzi.me/register/?expert),填写相关信息。
+进入挖金子网站的[注册页面](http://www.wajinzi.me/register_select/),选择**投资牛人**，填写完毕注册信息并提交。
 
 如下图：
 
@@ -21,7 +21,7 @@ permalink: /docs/work_with_wjz/
 
 ### 创建量化产品
 
-进入“我的产品”页面，如下图：
+进入**我的产品**页面，如下图：
 
 ![Image]({{site.baseurl}}/images/docs/wjz/create_prod1.png)
 
@@ -54,11 +54,9 @@ permalink: /docs/work_with_wjz/
 ```ini
 [strategy]
 ...
-username=username
-password=password
 strategy_id=2bee4fac-cf6f-11e4-96b9-00163e003744
 ...
 ```
 
-在本地机器上运行您的策略，就可以在挖金子网上看到策略的交易情况和绩效，同时可以参与产品业绩展示和排行，供您的粉丝膜拜〜〜
+在本地机器上运行您的策略，就可以在挖金子网上看到策略的交易情况和绩效，同时可以参与产品业绩展示和排行，供您的粉丝膜拜吧!
 
