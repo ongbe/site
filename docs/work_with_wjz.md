@@ -6,14 +6,14 @@ next_section: manual-deployment
 permalink: /docs/work_with_wjz/
 ---
 
-在[挖金子网](http://www.wajinzi.me/)）上试用您的量化策略，只需要三步：
+在[挖金子网](http://www.wajinzi.me/)上试用您的量化策略，只需要三步：
 
 1. 注册成为专家用户；
 2. 创建一个量化产品；
 3. 读取产品ID，并配置在您的量化策略程序中；
 
 ### 注册成专家用户
-进入挖金子网站的[注册页面](http://www.wajinzi.me/register_select/),选择**投资牛人**，填写完毕注册信息并提交。
+进入挖金子网站的[注册页面](http://www.wajinzi.me/register_select/)，选择**投资牛人**，填写完毕注册信息并提交。
 
 如下图：
 
