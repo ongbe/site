@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 挖金子网上试用量化云及策略sdk的步骤
+title: 试用量化云及策略sdk
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/work_with_wjz/
