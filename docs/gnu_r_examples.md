@@ -62,7 +62,7 @@ set_bar_handler(echo_data)
 set_tick_handler(echo_data)
 
 # 设置交易数据的处理
-trade_set_execution_handler(echo_data)
+trade_set_execrpt_handler(echo_data)
 trade_set_order_new_handler(echo_data)
 trade_set_order_rejected_handler(echo_data)
 trade_set_order_partially_filled_handler(echo_data)

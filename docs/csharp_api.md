@@ -13,7 +13,7 @@ permalink: /docs/csharp_api/
 
 #### 测试服务地址
 
-为方便策略开发和测试，以下服务在公网开放访问。真实交易时将配置切换到自己的服务地址即可，代码不用作任何修改，开发、测试和生产3个环境可以无缝迁移。地址如有变更，请查询官网通知: http://www.hsgo.com.cn
+为方便策略开发和测试，以下服务在公网开放访问。真实交易时将配置切换到自己的服务地址即可，代码不用作任何修改，开发、测试和生产3个环境可以无缝迁移。地址如有变更，请查询官网通知: http://www.myquant.cn
 
 ```
 行情服务连接字符串： md_addr=120.24.228.187:8000
@@ -776,7 +776,7 @@ public virtual void OnTick(Tick tick)
 - **OnExecRpt函数**
 
 
-响应委托执行回报事件，收到Execution数据后本函数被调用。
+响应委托执行回报事件，收到ExecRpt数据后本函数被调用。
 
 函数原型：
 ```c#
@@ -874,7 +874,7 @@ public virtual void OnOrderCancelled(Order order)
 
 - **OnOrderCancelRejected**
 
-响应订单`撤单请求被拒绝`事件，收到Execution数据后本函数被调用。`ord_rej_reason`说明为什么撤单失败。
+响应订单`撤单请求被拒绝`事件，收到ExecRpt数据后本函数被调用。`ord_rej_reason`说明为什么撤单失败。
 
 函数原型：
 ```c#
@@ -883,7 +883,7 @@ public virtual void OnOrderCancelRejected(ExecRpt rpt)
 
 参数说明及返回值说明：
 ```
-* @param execution 撤单失败的执行回报。
+* @param rpt 撤单失败的执行回报。
 ```
 
 ##### 其他事件

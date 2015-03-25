@@ -228,7 +228,7 @@ public partial class ErrorCode
 ```
 
 
-- Execution(委托执行回报）, C#引用路径： `class GMSDK.Execution`
+- ExecRpt(委托执行回报）, C#引用路径： `class GMSDK.ExecRpt`
 
 ```c#
     public class ExecRpt

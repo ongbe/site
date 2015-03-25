@@ -102,17 +102,17 @@ namespace test_strategy_simple
         }
 
         /// <summary>
-        /// 委托执行回报，订单的任何执行回报都会触发本事件，通过execution可访问回报信息。
+        /// 委托执行回报，订单的任何执行回报都会触发本事件，通过rpt可访问回报信息。
         /// </summary>
-        /// <param name="execution"></param>
+        /// <param name="rpt"></param>
         public override void OnExecRpt(ExecRpt rpt)
         {
             Console.WriteLine(
-                "execution: cl_ord_id={0} price={1} amount={2} exec_type={3}", 
-                execution.cl_ord_id, 
-                execution.price, 
-                execution.amount, 
-                execution.exec_type);
+                "rpt: cl_ord_id={0} price={1} amount={2} exec_type={3}", 
+                rpt.cl_ord_id, 
+                rpt.price, 
+                rpt.amount, 
+                rpt.exec_type);
         }
 
         /// <summary>
@@ -173,10 +173,10 @@ namespace test_strategy_simple
         /// <summary>
         /// 撤单请求被拒绝时，触发本事件
         /// </summary>
-        /// <param name="execution"></param>
+        /// <param name="rpt"></param>
         public override void OnOrderCancelRejected(ExecRpt rpt)
         {
-            Console.WriteLine("order cancel failed: {0}", execution.cl_ord_id);
+            Console.WriteLine("order cancel failed: {0}", rpt.cl_ord_id);
         }
 
         /// <summary>

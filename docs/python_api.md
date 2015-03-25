@@ -10,7 +10,7 @@ permalink: /docs/python_api/
 
 #### 测试服务地址
 
-为方便策略开发和测试，以下服务在公网开放访问。真实交易时将配置切换到自己的服务地址即可，代码不用作任何修改，开发、测试和生产3个环境可以无缝迁移。地址如有变更，请查询官网通知: http://www.hsgo.com.cn
+为方便策略开发和测试，以下服务在公网开放访问。真实交易时将配置切换到自己的服务地址即可，代码不用作任何修改，开发、测试和生产3个环境可以无缝迁移。地址如有变更，请查询官网通知: http://www.myquant.cn
 
 ```ini
 行情服务连接字符串： md_addr=120.24.228.187:8000
@@ -57,13 +57,13 @@ class StrategyBase(object):
     def on_trade(self, trade)
 	
 	# 交易事件
-    def on_execution(self, execution)
+    def on_execrpt(self, execrpt)
     def on_order_new(self, order)
     def on_order_filled(self, order)
     def on_order_partially_filled(self, order)
     def on_order_stop_executed(self, order)
     def on_order_cancelled(self, order)
-    def on_order_cancel_rejected(self, execution)
+    def on_order_cancel_rejected(self, execrpt)
 
     # 其他事件
     def on_error(self, code)
@@ -594,7 +594,7 @@ def cancel_order(self, cl_ord_id)
 ```
 * @param cl_ord_id  委托Order的客户端订单ID
 * @return 返回0，执行成功，否则返回错误码。
-*         cancel_order是异步请求，执行的结果由on_execution, on_order_cancelled, on_order_cancel_rejected回调返回。
+*         cancel_order是异步请求，执行的结果由on_execrpt, on_order_cancelled, on_order_cancel_rejected回调返回。
 ```
 
 - **`get_order`函数**
@@ -707,7 +707,7 @@ def on_bar(self, bar)
 
 ##### 交易事件
 
-- **`on_execution`函数**
+- **`on_execrpt`函数**
 
 
 响应委托执行回报事件，收到成交回报 `ExecRpt` 数据后本函数被调用。

@@ -104,7 +104,7 @@ void on_bar(Bar *bar)
 }
 
 //处理委托回报事件
-void on_execution(ExecRpt *res)
+void on_execrpt(ExecRpt *res)
 {
    printf("成交回报: strategy: %s, symbol: %s.%s price %.2f volume %d \n", 
    res->strategy_id, res->exchange, res->sec_id, res->price, res->volume);
@@ -147,7 +147,7 @@ int main(int argc, char *[])
     }
 
     // 设置事件回调函数
-    gm_td_set_execrpt_callback(on_execution);
+    gm_td_set_execrpt_callback(on_execrpt);
     gm_md_set_tick_callback(on_tick);
     gm_md_set_bar_callback(on_bar);
     gm_md_set_event_callback(on_event);

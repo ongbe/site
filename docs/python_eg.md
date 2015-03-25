@@ -43,10 +43,10 @@ class StrategySimple(StrategyBase):
         print ('bar: time=%s symbol=%s close_price=%s bar_type=%s' % 
             (bar.bar_time, bar.sec_id, bar.close, bar.bar_type))
 
-    def on_execution(self, execution):
-        ''' 委托执行回报，订单的任何执行回报都会触发本事件，通过execution可访问回报信息。'''
-        print ('execution: time=%s cl_ord_id=%s exec_type=%s' % 
-            (execution.transact_time, execution.cl_ord_id, execution.exec_type))
+    def on_execrpt(self, execrpt):
+        ''' 委托执行回报，订单的任何执行回报都会触发本事件，通过execrpt可访问回报信息。'''
+        print ('execrpt: time=%s cl_ord_id=%s exec_type=%s' % 
+            (execrpt.transact_time, execrpt.cl_ord_id, execrpt.exec_type))
 
     def on_order_rejected(self, order):
         ''' 订单被拒绝时，触发本事件。order参数包含最新的order状态。'''
@@ -73,9 +73,9 @@ class StrategySimple(StrategyBase):
         ''' 撤单成功时，触发本事件。order参数包含最新的order状态。'''
         print 'order cancelled: cl_ord_id=%s' % order.cl_ord_id
 
-    def on_order_cancel_rejected(self, execution):
+    def on_order_cancel_rejected(self, execrpt):
         ''' 撤单请求被拒绝时，触发本事件'''
-        print 'order cancel rejected: cl_ord_id=%s' % execution.cl_ord_id
+        print 'order cancel rejected: cl_ord_id=%s' % execrpt.cl_ord_id
 
     def on_error(self, code):
         ''' 错误处理，收到错误事件时，可以根据error_code判断是什么错误，然后进行处理。

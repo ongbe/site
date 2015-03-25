@@ -223,7 +223,7 @@ gmsdk::md_init 行情初始化方法，新版行情接口进行了简化，通�
 `gmsdk::trade_query_order`查询订单
 
 ###### 设置交易事件的响应函数
-`gmsdk::trade_set_execution_handler` 设置成交回报响应的处理函数
+`gmsdk::trade_set_execrpt_handler` 设置成交回报响应的处理函数
 
 `gmsdk::trade_set_order_cancel_rejected_handler` 设置撤单失败的响应处理
 

@@ -190,7 +190,7 @@ class Order(object):
 ```
 
 
-- Execution(委托执行回报）, Python引用路径： `gmsdk.message.ExecRpt`
+- ExecRpt(委托执行回报）, Python引用路径： `gmsdk.message.ExecRpt`
 
 ```python
 class ExecRpt(object):
