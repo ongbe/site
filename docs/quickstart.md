@@ -75,19 +75,6 @@ strategy_id=your strategy_id
 ```
    python strategy_dual_ma.py
 ```
-就可以发现策略会把收到的相应行情数据，以及下单、成交等信息打印出来。
-
-![local_run]({{site.baseurl}}/images/docs/local_run.png)
-
-
-### 策略终端查看
-如果需要查看更详细的策略运行情况，可以通过我们的策略运行监控终端来查看，用申请到的用户名、密码登录。
-
-![login]({{site.baseurl}}/images/docs/term_login.png)
-
-策略运行情况查看
-
-![strategy]({{site.baseurl}}/images/docs/terminal/main.jpg) 
 
   
 

@@ -13,7 +13,9 @@ permalink: /docs/gmsdk_intro/
 
 另外，我们在互联网部署了全套的公共后台服务：
 
+- 股票，期货，期权实时行情
 - 7 x 24小时不间断的模拟实时行情
+- 在线回放历史行情
 - 高仿真模拟实时交易服务
 - 实时风控服务
 - 实时绩效运算服务
@@ -25,11 +27,11 @@ permalink: /docs/gmsdk_intro/
 
 ## 掘金SDK支持的开发语言和操作系统
 
-掘金SDK目前支持C, C++, C#, Python, GNU R, Matlab（*通过C#支持*）6种语言，大家可以选择自己最熟悉、最趁手的语言来开发策略。5种开发语言支持的功能均完整一致，API风格统一，并有完善的开发文档和示例程序，方便快速上手。
+掘金SDK目前支持C, C++, `C#`, Python, Matlab, R, Javascript 共7种语言，大家可以选择自己最熟悉、最趁手的语言来开发策略。7种开发语言支持的功能均完整一致，API风格统一，并有完善的开发文档和示例程序，方便快速上手。
 
 SDK同时支持Windows和Linux操作系统，各操作系统支持的语言如下：
 
-- Windows： C, C++, C#, Python, R
+- Windows： C, C++, `C#`, Python, `Matlab`, R, Javascript
 - Linux： C, C++, Python, R
 
 
@@ -189,6 +191,6 @@ symbol_list 订阅代码表,参数格式如下：
 为方便策略开发和测试，以下服务在公网开放访问。真实交易时将配置切换到自己的服务地址即可，代码不用作任何修改，开发、测试和生产3个环境可以无缝迁移。地址如有变更，请查询官网通知: http://www.myquant.cn
 
 ```
-实时行情服务: tcp://cloud.myquant.cn:8000
-模拟交易服务: tcp://cloud.myquant.cn:8001
+实时行情服务: cloud.myquant.cn:8000
+模拟交易服务: cloud.myquant.cn:8001
 ```
