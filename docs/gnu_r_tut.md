@@ -82,7 +82,7 @@ Windows环境下，通常可以把解压的gmsdk.dll直接放在R安装目录下
 使用我们提供的互联网上演示服务，测试下历史数据的查询：
 
 ```
-> md_addr = "120.24.228.187:8000"
+> md_addr = "cloud.myquant.cn:8000"
 
 > gmsdk::login(md_addr, username, password)
 [1] "成功"

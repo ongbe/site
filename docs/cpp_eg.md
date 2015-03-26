@@ -127,8 +127,8 @@ int main(int argc, char *[])
     //初始化策略,根据参数
     /*
     ret = strategy_init(
-        "120.24.228.187:8000",
-        "120.24.228.187:8001",
+        "cloud.myquant.cn:8000",
+        "cloud.myquant.cn:8001",
         "username","password",
         "strategy_1",
         "CFFEX.IF1403.*");
@@ -163,7 +163,7 @@ int main(int argc, char *[])
 
 策略配置文件用的是直观的ini格式，支持Section, 其中gm部分为SDK所使用，这部分的配置可参考如下示例， 其中以`;`开始的部分表示注释掉的配置。
 
-- 	落地部署在本地的实时行情服务：md_addr=120.24.228.187:8000。
+- 	落地部署在本地的实时行情服务：md_addr=cloud.myquant.cn:8000。
  	
 strategy_id： 
 
@@ -177,9 +177,9 @@ subscribe_symbols:
 
 ```ini
 [strategy]
-md_addr=120.24.228.187:8000
+md_addr=cloud.myquant.cn:8000
 ;td_addr=192.168.1.102:8001
-td_addr=120.24.228.187:8001
+td_addr=cloud.myquant.cn:8001
 username=demo
 password=demo
 strategy_id=strategy_1
@@ -207,7 +207,7 @@ mode=3
 	
 ```ini
 	[strategy]
-	md_addr=120.24.228.187:8000
+	md_addr=cloud.myquant.cn:8000
 	td_addr=192.168.1.16:8001
 	username=demo
 	password=demo

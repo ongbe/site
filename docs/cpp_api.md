@@ -21,7 +21,7 @@ GM_API int gm_login(const char *addr,
                     const char *password);
 ```
 - 参数说明
-    * @param addr       掘金数据服务器地址, <机器名/IP>:<端口号>格式，如 211.154.152.181:5103
+    * @param addr       掘金数据服务器地址, <机器名/IP>:<端口号>格式，如 cloud.myquant.cn:8000
     * @param username   掘金账号
     * @param password   掘金密码
 
@@ -979,8 +979,8 @@ GM_API int strategy_init(
     
 - 参数说明
 
-    	* @param md_addr			数据服务地址, 比如 211.154.152.181:5103
-    	* @param td_addr			交易服务地址, 比如 211.154.152.181:5050
+    	* @param md_addr			数据服务地址, 比如 cloud.myquant.cn:8000
+    	* @param td_addr			交易服务地址, 比如 cloud.myquant.cn:8001
     	* @param username			掘金账号
     	* @param password			掘金密码
     	* @param strategy_id		策略ID

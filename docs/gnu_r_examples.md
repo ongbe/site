@@ -25,8 +25,8 @@ echo_data <- function(data) {
 library(gmsdk)
 
 # 分别设置实时行情、交易的服务地址
-md_uri = '120.24.228.187:8000'
-td_uri = '120.24.228.187:8001'
+md_uri = 'cloud.myquant.cn:8000'
+td_uri = 'cloud.myquant.cn:8001'
 
 # 用户名、密码及代码
 username = 'demo'

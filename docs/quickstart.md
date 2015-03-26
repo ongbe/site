@@ -47,9 +47,8 @@ Python程序中，需要注意，是用配置文件初始化的。
 
 ```ini
 [gm]
-md_uri=tcp://211.154.152.181:5103
-tr_uri=tcp://211.154.152.181:5050
-query_uri=tcp://211.154.152.181:5104
+md_addr=cloud.myquant.cn:8000
+td_addr=cloud.myquant.cn:8001
 username=your username
 password=your password
 strategy_id=your strategy_id
@@ -61,12 +60,12 @@ strategy_id=your strategy_id
 ```python
     # init by arguments
     strategy = DualMA(
-        md_uri='tcp://211.154.152.181:5106',
-        tr_uri='tcp://211.154.152.181:5050',
-        query_uri='tcp://211.154.152.181:5104',
+        md_addr='cloud.myquant.cn:8000',
+        td_addr='cloud.myquant.cn:8001',
         username='your username',
         password='your password',
         strategy_id='your strategy_id',
+        mode=2,
         subscribe_symbols='CFFEX.IF1406.tick,CFFEX.IF1406.bar.15',  # 订阅tick和15s周期bar
     )
 ```

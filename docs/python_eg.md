@@ -93,8 +93,8 @@ if __name__ == '__main__':
 
     # init by arguments
     strategy = StrategySimple(
-        md_addr='120.24.228.187:8000',
-        td_addr='120.24.228.187:8001',
+        md_addr='cloud.myquant.cn:8000',
+        td_addr='cloud.myquant.cn:8001',
         username='your username',
         password='your password',
         strategy_id='your strategy_id',
@@ -111,8 +111,8 @@ if __name__ == '__main__':
 更换了md_addr,增加了回放需要的几个参数，回放开始时间，结束时间:
 
 ```
-    md_addr='120.24.228.187:8000'
-    td_addr='120.24.228.187:8001'
+    md_addr='cloud.myquant.cn:8000'
+    td_addr='cloud.myquant.cn:8001'
     username='your username'
     password='your password'
     strategy_id='your strategy_id'

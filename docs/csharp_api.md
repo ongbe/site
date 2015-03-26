@@ -16,8 +16,8 @@ permalink: /docs/csharp_api/
 为方便策略开发和测试，以下服务在公网开放访问。真实交易时将配置切换到自己的服务地址即可，代码不用作任何修改，开发、测试和生产3个环境可以无缝迁移。地址如有变更，请查询官网通知: http://www.myquant.cn
 
 ```
-行情服务连接字符串： md_addr=120.24.228.187:8000
-交易服务连接字符串： td_addr=120.24.228.187:8001
+行情服务连接字符串： md_addr=cloud.myquant.cn:8000
+交易服务连接字符串： td_addr=cloud.myquant.cn:8001
 ```
 
 #### GMSDK.MdApi(行情接口)
@@ -223,8 +223,8 @@ public int Init(
 ```
 * 初始化GMSDK: 连接并登陆行情服务、交易服务
 * 初始化GMSDK: 连接并登陆实时行情服务、历史行情服务、交易服务
-* @param md_addr       行情服务器uri, 比如 120.24.228.187:8000
-* @param td_addr       交易服务器uri, 比如 120.24.228.187:8001
+* @param md_addr       行情服务器uri, 比如 cloud.myquant.cn:8000
+* @param td_addr       交易服务器uri, 比如 cloud.myquant.cn:8001
 * @param username     掘金账号
 * @param password     掘金密码
 * @param strategy_id  策略ID
@@ -269,8 +269,8 @@ public int Init(
 ```c#
 var strategy = new MyStrategy();
 strategy.Init(
-	"120.24.228.187:8000",
-	"120.24.228.187:8001",
+	"cloud.myquant.cn:8000",
+	"cloud.myquant.cn:8001",
 	"your username",
 	"your password",
 	"your strategy_id",
@@ -300,8 +300,8 @@ public int InitWithConfig(string config_file)
 config_file 配置文件的格式约定，比如`strategy_simple.ini`配置的内容：
 
 ```ini
-        md_addr='120.24.228.187:8000'
-        td_addr='120.24.228.187:8001'
+        md_addr='cloud.myquant.cn:8000'
+        td_addr='cloud.myquant.cn:8001'
         username='your username'
         password='your password'
         strategy_id='your strategy_id'

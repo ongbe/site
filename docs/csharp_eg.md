@@ -39,8 +39,8 @@ namespace test_strategy_simple
         {
             StrategySimple s = new StrategySimple();
             int ret = s.Init(
-                "120.24.228.187:8000",
-                "120.24.228.187:8001",
+                "cloud.myquant.cn:8000",
+                "cloud.myquant.cn:8001",
                 "demo",
                 "demo",
                 "strategy_2",
