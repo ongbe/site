@@ -46,7 +46,7 @@ Python程序中，需要注意，是用配置文件初始化的。
 ```
 
 ```ini
-[gm]
+[strategy]
 md_addr=cloud.myquant.cn:8000
 td_addr=cloud.myquant.cn:8001
 username=your username
