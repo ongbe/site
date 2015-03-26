@@ -178,7 +178,6 @@ subscribe_symbols:
 ```ini
 [strategy]
 md_addr=cloud.myquant.cn:8000
-;td_addr=192.168.1.102:8001
 td_addr=cloud.myquant.cn:8001
 username=demo
 password=demo
