@@ -1,6 +1,6 @@
-baseurl: "/site"
+baseurl: ""
 highlighter: pygments
-pygments: true
+#pygments: true
 markdown: redcarpet
 relative_permalinks: false
 gauges_id: 503c5af6613f5d0f19000027
