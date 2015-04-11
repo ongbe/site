@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Matlab环境 gmsdk使用说明  
+title: Matlab语言sdk安装  
 prev_section: github-pages
 next_section: manual-deployment
 permalink: /docs/matlab_tut/
@@ -8,11 +8,11 @@ permalink: /docs/matlab_tut/
 
 本节简单介绍如何在Matlab安装和使用gmsdk
 
-### gmsdk支持的Matlab版本
+### 支持的Matlab版本
 
-gmsdk支持Matlab R2013b 及以后版本。现阶段暂支持windows 32位 Matlab版本。
+gmsdk支持Matlab R2013b 及以后32位版本
 
-### Matlab中 安装 gmsdk toolbox(以R2013b为例)
+### 安装gmsdk toolbox
 
 1. 将gmsdk 解压到$MatlabRoot\toolbox中(其他路径也可以，但是为了方便管理，我们一般都安装在这里)，$MatlabRoot是你的Matlab安装路径，你可以在Matlab中输入`matlabroot`命令获取
 2. 在Matlab中如下操作，选择 `HOME—>Set Path...`，点击`Add Folder...`
@@ -20,13 +20,14 @@ gmsdk支持Matlab R2013b 及以后版本。现阶段暂支持windows 32位 Matla
 4. 此时返回到Set Path对话框，点击左下角的保存按钮(记住一定要保存)，至此工具箱安装完毕，点击Close关闭对话框
 
 
-### 检查和使用
+### 检查安装是否成功
 
 输入命令:
 
 
 ```c#
-> gm.Init('cloud.myquant.cn:8000', '', '');
+> gm.Load()
+> gm.Init('cloud.myquant.cn:8000', 'demo', 'demo');
 > ticks = gm.GetLastNTicks('CFFEX.IF1506', 10);
 > ticks
 
