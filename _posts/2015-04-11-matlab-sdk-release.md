@@ -1,28 +1,21 @@
 ---
-layout: docs
-title: Matlab语言API示例  
-prev_section: github-pages
-next_section: manual-deployment
-permalink: /docs/matlab_tut/
+layout: news_item
+title:  Matlab实盘交易时代来临！
+date: "2015-04-11 19:00:00 +0800"
+author: 掘金团队
+version: 
+categories: [产品新闻]
 ---
 
-本节简单介绍如何在Matlab安装和使用gmsdk
+各位掘金宽客们，大家好。近期股市风起云涌，掘金团队与时俱进，为大家带来了新的掘金神器：**掘金量化平台 Matlab版Toolbox正式发布，Matlab实盘交易时代真正来临！**
 
-### Matlab版本支持
+您没看错，Matlab宽客们，从此以后不用再求别人重写您的策略了，您研究的策略直接就可以`实盘交易`！
+策略研究->回验->仿真->实盘，通通在Matlab中搞定，您不再需要依赖任何外部力量， 一切都在您的掌控之下。您，就是是量化交易的真正主宰，宽客之王！
 
-掘金toolbox支持Matlab R2013b 及以后版本。现阶段暂支持windows 32位 Matlab版本。
+掘金toolbox包含了量化云平台的全部功能，您可以订阅全市场实时行情，实时交易股票、期货、期权，轻易完成跨市场套利、量化选股，乃至高频策略；您可以提取历史数据，在线回放历史行情，进行各种分析研究；您可以进行策略研究、模拟交易、仿真交易、真实交易，toolbox的功能涵盖了策略完整的生命周期。
 
-### 安装步骤
+下面，让我们跟随示例一起快速体验一下掘金toolbox各项强大功能吧。相关链接请见：[下载toolbox](/downloads/)，[安装使用](/docs/matlab_tut/)，[详细开发指南](/docs/matlab_api/)。
 
-1. 将gmsdk 解压到`$MatlabRoot\toolbox`中(其他路径也可以，但是为了方便管理，我们一般都安装在这里)，`$MatlabRoot`是你的Matlab安装路径，你可以在Matlab中输入`matlabroot`命令获取
-
-2. 在Matlab中如下操作，选择 `HOME—>Set Path...`，点击`Add Folder...`
-
-3. 在浏览文件中，选择刚才的安装路径`$MatlabRoot/toolbox/.../goldminer`后，点击确定
-
-4. 此时返回到`Set Path`对话框，点击左下角的保存按钮(记住一定要保存)，至此工具箱安装完毕，点击Close关闭对话框
-
-### 使用示例
 
 #### 数据提取示例
 

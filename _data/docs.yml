@@ -42,6 +42,7 @@
 - title: 策略开发：Matlab
   docs:
   - matlab_tut
+  - matlab_api
 
 
 - title: 常见问题解答(FAQ)
